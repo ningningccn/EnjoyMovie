@@ -1,0 +1,94 @@
+<template>
+  <div
+  :style="{backgroundImage:'url(' + product.imageUrl + ')',
+    backgroundSize: 'cover', backgroundPosition: 'center'}">
+    <div class="blur">
+    <Navbar></Navbar>
+      <div class="container mt-5 pb-5 text-white" >
+        <div class="context row">
+          <div class="context-left col-12  col-md-6">
+            <img class="col-md-12" :src="product.imageUrl" alt="">
+          </div>
+          <div class="context-right col-10 mt-4 mx-auto col-md-6">
+            <h1>{{product.title}}</h1>
+            <h6 class="text-secondary">類別:{{product.category}}</h6>
+            <div
+              style="margin-bottom:30px;font-size:18px">
+              {{product.description}}
+            </div>
+            <del style="font-size:30px;"
+            v-if="product.origin_price">
+              <span>原價：</span>{{product.origin_price | currency}}
+            </del>
+            <div style="font-size:40px"
+            :class="{'text-white':!product.origin_price,
+            'text-success':product.origin_price}">
+              <span v-if="product.origin_price">優惠價：</span>
+              <span v-if="!product.origin_price">售價：</span>
+              {{product.price| currency}}
+            </div>
+            <select name="" class="form-control mt-3" v-model="product.num">
+              <option :value="num" v-for="num in 10" :key="num">
+                選購 {{num}} {{product.unit}}
+              </option>
+            </select>
+            <button class="btn btn-secondary mt-5 w-100"
+            @click.prevent="addToCart(product.id, product.num)">
+              加入購物車
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import Navbar from '@/components/navbar.vue';
+// import Navbar from '../../components/navbar.vue';
+
+export default {
+  data() {
+    return {
+      product_detailId: '',
+      product: {},
+    };
+  },
+  components: {
+    Navbar,
+  },
+  methods: {
+    getProduct_detail() {
+      const vm = this;
+      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/product/${vm.product_detailId}`;
+      this.$store.dispatch('updateLoading', true);
+      this.$http.get(api).then((response) => {
+        if (response.data.success) {
+          vm.product = response.data.product;
+          vm.product.num = 1;
+          this.$store.dispatch('updateLoading', false);
+        } else {
+          console.log('eorro');
+        }
+      });
+    },
+    addToCart(id, qty = 1) {
+      this.$store.dispatch('cartModules/addToCart', { id, qty });
+    },
+  },
+
+  created() {
+    this.product_detailId = this.$route.params.productId;
+    this.getProduct_detail();
+  },
+};
+</script>
+
+<style scoped>
+.blur {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+</style>
