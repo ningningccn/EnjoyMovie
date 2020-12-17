@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <router-link class="mr-5" to="/">
-        <img src="../assets/Ning_LogoW.png" alt="" >
+        <img src="../assets/Ning_LogoW.png" alt="logo" >
       </router-link>
       <button class="navbar-toggler"
           type="button"
@@ -44,9 +44,11 @@ export default {
     signout() {
       const vm = this;
       const api = `${process.env.VUE_APP_API}/logout`;
+      vm.$store.dispatch('updateLoading', true);
       vm.$http.post(api).then((response) => {
         if (response.data.success) {
           vm.$router.push('/login');
+          vm.$store.dispatch('updateLoading', false);
         }
       });
     },

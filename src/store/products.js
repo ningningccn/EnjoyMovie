@@ -39,9 +39,6 @@ export default {
         state.tempCategory = category;
         state.filterCategory = state.allproducts.filter((item) => item.category === category);
       }
-      console.log(state.filterCategory);
-      // state.tempCategory = category;
-      // console.log(state.tempCategory);
     },
   },
   actions: {
@@ -55,33 +52,15 @@ export default {
         context.commit('PRODUCTS', response.data.products);
         context.commit('PAGINATION', response.data.pagination);
         context.commit('CATEGORIES', response.data.products);
-        console.log('取得產品列表', response.data);
         context.commit('LOADING', false, { root: true });
       });
     },
     getAllProducts(context) {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/products/all`;
-      console.log(api);
       axios.get(api).then((response) => {
-        console.log(response);
         context.commit('ALLPRODUCTS', response.data.products);
-        console.log('取得產品列表123', response.data);
       });
     },
-    // getProduct_detail(context, id) {
-    //   // this.$store.dispatch('updateLoading', true);
-    //   axios.get(api).then((response) => {
-    //     // if (response.data.success) {
-    //     //   vm.product = response.data.product;
-    //     //   vm.product.num = 1;
-    //     //   $('#productModal').modal('show');
-    //     //   this.$store.dispatch('updateLoading', false);
-    //     //   console.log('done');
-    //     // } else {
-    //     //   console.log('eorro');
-    //     // }
-    //   });
-    // },
     gettempCategory(context, category) {
       context.commit('TEMPCATEGORY', category);
     },
@@ -93,9 +72,6 @@ export default {
     allproducts: (state) => state.allproducts,
     tempCategory: (state) => state.tempCategory,
     filterCategory: (state) => state.filterCategory,
-    // categories(state) {
-    //   return state.categories;
-    // },
   },
   modules: {
   },

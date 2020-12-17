@@ -6,10 +6,6 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '*',
-    redirect: '/',
-  },
-  {
     path: '/login',
     name: 'Login',
     component: () => import('../views/Login.vue'),
@@ -73,7 +69,10 @@ const routes = [
         component: () => import('../views/Admin_Discount.vue'),
         meta: { requiresAuth: true },
       },
-
+      {
+        path: '*',
+        redirect: '/',
+      },
     ],
   },
 ];

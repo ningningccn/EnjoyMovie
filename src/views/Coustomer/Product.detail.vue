@@ -3,7 +3,7 @@
   :style="{backgroundImage:'url(' + product.imageUrl + ')',
     backgroundSize: 'cover', backgroundPosition: 'center'}">
     <div class="blur">
-    <Navbar></Navbar>
+      <Navbar/>
       <div class="container mt-5 pb-5 text-white" >
         <div class="context row">
           <div class="context-left col-12  col-md-6">
@@ -45,7 +45,6 @@
 
 <script>
 import Navbar from '@/components/navbar.vue';
-// import Navbar from '../../components/navbar.vue';
 
 export default {
   data() {
@@ -61,14 +60,12 @@ export default {
     getProduct_detail() {
       const vm = this;
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/product/${vm.product_detailId}`;
-      this.$store.dispatch('updateLoading', true);
-      this.$http.get(api).then((response) => {
+      vm.$store.dispatch('updateLoading', true);
+      vm.$http.get(api).then((response) => {
         if (response.data.success) {
           vm.product = response.data.product;
           vm.product.num = 1;
-          this.$store.dispatch('updateLoading', false);
-        } else {
-          console.log('eorro');
+          vm.$store.dispatch('updateLoading', false);
         }
       });
     },

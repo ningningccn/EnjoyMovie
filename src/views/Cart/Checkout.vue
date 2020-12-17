@@ -71,16 +71,18 @@ export default {
       const vm = this;
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/order/${vm.orderId}`;
       vm.$http.get(api).then((response) => {
-        console.log(response);
-        vm.order = response.data.order;
+        if (response.data.success) {
+          vm.order = response.data.order;
+        }
       });
     },
     payOrder() {
       const vm = this;
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/pay/${vm.orderId}`;
       vm.$http.post(api).then((response) => {
-        console.log(response);
-        vm.getOrderId();
+        if (response.data.success) {
+          vm.getOrderId();
+        }
       });
     },
   },

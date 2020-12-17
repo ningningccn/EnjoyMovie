@@ -258,7 +258,7 @@ export default {
       formData.append('file-to-upload', uploadedFile);
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/upload`;
       vm.status.fileUploading = true; // 令上傳圖片時 有loading效果 開始
-      this.$http.post(api, formData, {
+      vm.$http.post(api, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

@@ -44,8 +44,10 @@ export default {
     getOrderList(page = 1) {
       const vm = this;
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/orders?page=${page}`;
-      this.$http.get(api).then((response) => {
+      vm.$store.dispatch('updateLoading', true);
+      vm.$http.get(api).then((response) => {
         vm.orderlist = response.data.orders;
+        vm.$store.dispatch('updateLoading', false);
       });
     },
   },

@@ -7,7 +7,7 @@
         <div class="container py-5">
           <div class="context d-flex row mx-auto">
             <div class="col-12 col-lg-3 ">
-              <Allcategory></Allcategory>
+              <Allcategory/>
             </div>
             <div class="col-10 col-md-12 col-lg-9 mx-auto" >
               <router-view></router-view>
@@ -31,7 +31,6 @@ export default {
     Banner,
     Allcategory,
   },
-
 };
 </script>
 <style scoped>
