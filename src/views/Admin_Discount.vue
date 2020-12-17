@@ -2,7 +2,9 @@
   <div>
     <loading :active.sync="isLoading"></loading>
     <div class="text-right mt-4">
-      <button class="btn btn-primary" @click="opendDiscountModal(true)" >建立新的優惠卷</button>
+      <button type="button" class="btn btn-primary" @click="opendDiscountModal(true)" >
+        建立新的優惠卷
+      </button>
     </div>
     <table class="table mt-4 text-white">
       <thead>
@@ -16,19 +18,19 @@
       </thead>
       <tbody>
         <tr v-for="item in discounts" :key="item.id">
-          <td>{{item.title}}</td>
-          <td>{{item.percent}}</td>
-          <td>{{item.due_date}}</td>
+          <td>{{ item.title }}</td>
+          <td>{{ item.percent }}</td>
+          <td>{{ item.due_date }}</td>
           <td>
             <span v-if="item.is_enabled" class="text-success">啟用</span>
             <span v-else>未啟用</span>
           </td>
           <td>
             <div class="btn-group">
-              <button class="btn btn-outline-primary btn-sm"
+              <button type="button" class="btn btn-outline-primary btn-sm"
                 @click="opendDiscountModal(false,item)">編輯
               </button>
-              <button class="btn btn-outline-danger btn-sm"
+              <button type="button" class="btn btn-outline-danger btn-sm"
                 @click="openDel_discountModal(item)">刪除
               </button>
             </div>
@@ -108,7 +110,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <p>優惠名稱:{{tempDiscounts.title}}</p>
+            <p>優惠名稱:{{ tempDiscounts.title }}</p>
           </div>
 
           <div class="modal-footer">
@@ -164,27 +166,21 @@ export default {
       $('#DiscountModal').modal('show');
     },
     updateCoupons() {
+      const vm = this;
       let api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon`;
       let httpMethod = 'post';
-      const vm = this;
       vm.isLoading = true;
       if (!this.isNew) {
         api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon/${this.tempDiscounts.id}`;
         httpMethod = 'put';
       }
-      // eslint-disable-next-line no-console
-      console.log(vm.tempDiscounts);
       this.$http[httpMethod](api, { data: vm.tempDiscounts }).then((response) => {
-        // eslint-disable-next-line no-console
-        console.log(response.data);
         if (response.data.success) {
           $('#DiscountModal').modal('hide');
           vm.getDiscounts();
           vm.isLoading = false;
         } else {
           $('#DiscountModal').modal('hide');
-          // eslint-disable-next-line no-console
-          console.log('增新或修改失敗');
         }
       });
     },
@@ -197,11 +193,9 @@ export default {
     delDiscount() {
       const vm = this;
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon/${vm.tempDiscounts.id}`;
-      this.$http.delete(api).then((response) => {
+      vm.$http.delete(api).then((response) => {
         if (response.data.success) {
-          // eslint-disable-next-line no-console
-          console.log('已經成功刪掉');
-          this.getDiscounts();
+          vm.getDiscounts();
           $('#openDeldiscountModal').modal('hide');
           vm.tempDiscounts = {}; // 重置tempDiscounts 內容
         }

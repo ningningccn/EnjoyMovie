@@ -2,9 +2,9 @@
   <div class="home">
     <Navbar/>
     <div class='col-12 px-0'>
-    <swiper></swiper>
+    <Swiper/>
     </div>
-    <Recommended></Recommended>
+    <Recommended/>
     <div class='background'>
       <div class="background-img"></div>
       <div class="container-blur"></div>
@@ -12,7 +12,7 @@
         <div class="new text-white h2 mt-5 pt-4 text-center">
           最新上映
         </div>
-        <ThreeDswiper></ThreeDswiper>
+        <ThreeDswiper/>
       </div>
     </div>
   </div>
@@ -20,25 +20,18 @@
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue';
 import Navbar from '@/components/navbar.vue';
 import Recommended from '@/components/home/recommended.vue';
-import swiper from '@/components/home/swiper.vue';
+import Swiper from '@/components/home/swiper.vue';
 import ThreeDswiper from '@/components/home/3dswiper.vue';
 
 export default {
   name: 'Home',
   components: {
     Navbar,
-    // Banner,
-    // Category,
     Recommended,
-    swiper,
+    Swiper,
     ThreeDswiper,
-    // Videoeffect,
-  },
-  created() {
-    console.log(process.env.VUE_APP_API);
   },
 };
 </script>

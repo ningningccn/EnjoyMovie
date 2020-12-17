@@ -7,9 +7,8 @@
         :cartProductSD="cartProduct"
         @reflash="getCart"> <!--傳資料 -->
       </Cart>
-      <Form ></Form>
+      <Form/>
     </div>
-
   </div>
 </template>
 
@@ -34,10 +33,9 @@ export default {
   },
   methods: {
     getCart() {
-      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
       const vm = this;
-      this.$http.get(api).then((response) => {
-        console.log(response.data.data);
+      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
+      vm.$http.get(api).then((response) => {
         vm.cartProduct = response.data.data;
       });
     },

@@ -11,36 +11,25 @@
           </div>
           <div class="card-mask">
             <div class="card-title">
-              {{item.title}}
+              {{ item.title }}
             </div>
           </div>
           <div class="movie_category">
-            {{item.category}}
+            {{ item.category }}
           </div>
         </div>
       </div>
-      <!-- <div class="col-md-4 mb-4"> -->
-<!-- class="col-md-6 col-lg-4 mb-4" -->
-
     </div>
   </div>
 </template>
 <script>
 import { mapGetters } from 'vuex';
-// import { mapActions } from 'vuex';
 
 export default {
   props: ['item'],
   methods: {
     product_detail(id) {
       this.$router.push(`/product_detail/${id}`);
-    },
-    // getOnceProduct(id) {
-    //   this.$store.dispatch('productModules/getOnceProduct', id);
-    // },
-    // ...mapActions('productModules', ['getOnceProduct']),
-    add() {
-      console.log('add');
     },
   },
   computed: {
@@ -49,29 +38,6 @@ export default {
   created() {
   },
 };
-// export default {
-//   props: ['item'],
-//   methods: {
-//     getOnceProduct(id) {
-//       // onceid = Products.vue 中的 @event
-//       // @onceid 在 Products.vue 指向 getProducts
-//       this.$emit('onceid', id);
-//       console.log(id);
-//     },
-//     addCart(id, qty = 1) {
-//       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
-//       // const vm = this;
-//       const cart = {
-//         product_id: id,
-//         qty,
-//       };
-//       this.$http.post(api, { data: cart }).then((response) => {
-//         // vm.status.loadingItem = '';
-//         console.log(response.data);
-//       });
-//     },
-//   },
-// };
 </script>
 <style  scoped>
 /* 商品卡片 */
@@ -128,12 +94,6 @@ export default {
   transition: all 0.7S;
   padding: 0px 15px;
 }
-/* .card-cart a{
-  color:red;
-}
-.movie-card:hover .card-cart{
-  right: 0px;
-} */
 .movie_category {
   position:absolute;
   left:0;

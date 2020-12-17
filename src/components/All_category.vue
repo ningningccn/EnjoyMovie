@@ -5,7 +5,6 @@
       @click.prevent="gettempCategory('')"
       :class="{'active': tempCategory === ''}" >
       <div class="category-item  d-flex justify-content-center my-1 p-2 ">
-        <!-- <img src="../assets/icon/gift.png" alt=""> -->
         <span class ="align-self-center"
         :class="{'text-secondary': tempCategory === ''}">所有電影</span>
       </div>
@@ -15,7 +14,6 @@
       @click.prevent="gettempCategory('動作')"
       :class="{'active': tempCategory === '動作'}" >
       <div class="category-item  d-flex justify-content-center my-1 p-2">
-        <!-- <img src="../assets/icon/clothes.png" alt=""> -->
         <span class ="align-self-center"
         :class="{'text-secondary': tempCategory === '動作'}">動作片</span>
       </div>
@@ -25,7 +23,6 @@
       @click.prevent="gettempCategory('劇情')"
       :class="{'active': tempCategory === '劇情'}" >
       <div class="category-item  d-flex justify-content-center my-1 p-2">
-        <!-- <img src="../assets/icon/pants.png" alt="" width="64" height="64"> -->
         <span class ="align-self-center"
         :class="{'text-secondary': tempCategory === '劇情'}">劇情片</span>
       </div>

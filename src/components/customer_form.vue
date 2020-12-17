@@ -68,19 +68,16 @@ export default {
   },
   methods: {
     createOrder() {
-      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/order`;
       const vm = this;
+      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/order`;
       const order = vm.form;
-      this.$validator.validate().then((result) => {
+      vm.$validator.validate().then((result) => {
         if (result) {
-          this.$http.post(api, { data: order }).then((response) => {
+          vm.$http.post(api, { data: order }).then((response) => {
             if (response.data.success) {
-              console.log(response.data);
               vm.$router.push(`/customer_checkout/${response.data.orderId}`);
             }
           });
-        } else {
-          console.log('欄位不完整');
         }
       });
     },

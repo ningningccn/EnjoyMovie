@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="@/assets/movie_banner/Discount_Banner.jpg" alt="">
+    <img src="@/assets/movie_banner/Discount_Banner.jpg" alt="DiscountBanner">
   </div>
 </template>
 <style scoped>

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <p class ='category_title'> 商品分類 </p> -->
     <div class="categories">
       <div class="item">
         <a href="">衣服</a>

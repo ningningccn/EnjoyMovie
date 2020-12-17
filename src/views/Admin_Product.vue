@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-right mt-4">
-      <button class="btn btn-primary" @click="openModal(true)" >建立新的產品</button>
+      <button type="button" class="btn btn-primary" @click="openModal(true)" >建立新的產品</button>
     </div>
     <!-- 主要內容 -->
     <table class="table mt-4 text-white">
@@ -19,13 +19,13 @@
       <tbody class="itemlist">
         <tr v-for="item in products" :key="item.id">
           <td><img :src="item.imageUrl" alt="" width="60"></td>
-          <td>{{item.category}} </td>
-          <td>{{item.title}} </td>
+          <td>{{ item.category }} </td>
+          <td>{{ item.title }} </td>
           <td class="text-right">
-            {{item.origin_price | currency }}
+            {{ item.origin_price | currency }}
           </td>
           <td class="text-right">
-            {{item.price |currency}}
+            {{ item.price |currency }}
           </td>
           <td>
             <span v-if="item.is_enabled" class="text-success">啟用</span>
@@ -33,9 +33,9 @@
           </td>
           <td>
             <div class="btn-group">
-              <button class="btn btn-outline-primary btn-sm"
+              <button type="button" class="btn btn-outline-primary btn-sm"
                 @click="openModal(false, item)">編輯</button>
-              <button class="btn btn-outline-danger btn-sm"
+              <button type="button" class="btn btn-outline-danger btn-sm"
                 @click="delModal(item)">刪除</button>
             </div>
           </td>
@@ -160,7 +160,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <p>產品名稱:{{tempProduct.title}}</p>
+            <p>產品名稱:{{ tempProduct.title }}</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -169,10 +169,7 @@
         </div>
       </div>
     </div><!-- 刪除 Modal End -->
-
-    <!-- 切換頁 Start -->
     <Pagination :pagination="pagination" @event="getapiProducts"></Pagination>
-    <!-- 切換頁 End -->
 
   </div>
 </template>
@@ -198,12 +195,10 @@ export default {
   // 方法
   methods: {
     getapiProducts(page = 1) {
-      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/products?page=${page}`;
       const vm = this;
+      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/products?page=${page}`;
       vm.$store.dispatch('updateLoading', true);
-      this.$http.get(api).then((response) => {
-        // eslint-disable-next-line no-console
-        console.log(response.data);
+      vm.$http.get(api).then((response) => {
         vm.products = response.data.products;
         vm.pagination = response.data.pagination;
         vm.$store.dispatch('updateLoading', false);
@@ -219,36 +214,26 @@ export default {
         this.isNew = false;
       }
       $('#productModal').modal('show');
-      // eslint-disable-next-line no-console
-      console.log(this.isNew);
     },
     updateProduct() {
+      const vm = this;
       let api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/product`;
       let httpMethod = 'post';
-      const vm = this;
       if (!vm.isNew) {
-        // eslint-disable-next-line no-console
-        console.log(vm.tempProduct.id);
         api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/product/${vm.tempProduct.id}`;
         httpMethod = 'put';
       }
-      this.$http[httpMethod](api, { data: vm.tempProduct }).then((response) => {
-        // eslint-disable-next-line no-console
-        console.log(response.data);
+      vm.$http[httpMethod](api, { data: vm.tempProduct }).then((response) => {
         if (response.data) {
           $('#productModal').modal('hide'); // 將modal視窗關閉
           vm.getapiProducts();
         } else {
           $('#productModal').modal('hide');
-          // eslint-disable-next-line no-console
-          console.log('add error');
         }
       });
     },
     delModal(item) {
       const vm = this;
-      // const api = `${process.env.VUE_APP_API}/api/${process.env.
-      // VUE_APP_CUSTOMPATH}admin/product/${item}`;
       const tempobj = {};
       vm.tempProduct = Object.assign(tempobj, item);
       $('#productModalDel').modal('show');
@@ -256,23 +241,19 @@ export default {
     delProduct() {
       const vm = this;
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/product/${vm.tempProduct.id}`;
-      this.$http.delete(api).then((response) => {
-        // eslint-disable-next-line no-console
-        console.log(response.data);
+      vm.$http.delete(api).then((response) => {
         if (response.data.success) {
           $('#productModalDel').modal('hide');
           vm.getapiProducts();
         } else {
           $('#productModalDel').modal('hide');
-          // eslint-disable-next-line no-console
-          console.log('刪除失敗');
         }
       });
     },
     // 上傳圖檔
     uploadFile() {
-      const uploadedFile = this.$refs.files.files[0];
       const vm = this;
+      const uploadedFile = this.$refs.files.files[0];
       const formData = new FormData();
       formData.append('file-to-upload', uploadedFile);
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/upload`;
@@ -282,8 +263,6 @@ export default {
           'Content-Type': 'multipart/form-data',
         },
       }).then((response) => {
-        // eslint-disable-next-line no-console
-        console.log(response.data);
         vm.status.fileUploading = false; // 令上傳圖片時 有loading效果 關閉
         if (response.data.success) {
           vm.$set(vm.tempProduct, 'imageUrl', response.data.imageUrl); // 強制(位置),(欄位),(上傳的連結)

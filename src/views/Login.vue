@@ -2,7 +2,7 @@
   <div>
     <div class="bg-img">
       <div class="bg-blur">
-        <Navbar></Navbar>
+        <Navbar/>
         <Alert/>
         <main class="my-5 text-white ">
           <form class="form-signin shadow p-5 rounded">
@@ -22,7 +22,6 @@
             </div>
             <button class="btn btn-lg btn-primary btn-block"
             @click.prevent="signin" type="submit">Sign in</button>
-            <!-- <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p> -->
           </form>
         </main>
       </div>
@@ -48,17 +47,14 @@ export default {
   },
   methods: {
     signin() {
-      const api = `${process.env.VUE_APP_API}/admin/signin`;
       const vm = this;
+      const api = `${process.env.VUE_APP_API}/admin/signin`;
       vm.$store.dispatch('updateLoading', true);
-      console.log(vm);
-      this.$http.post(api, vm.user).then((response) => {
-        console.log(response.data);
+      vm.$http.post(api, vm.user).then((response) => {
         if (response.data.success) {
           vm.$router.push('/admin/product');
           vm.$store.dispatch('updateLoading', false);
         } else {
-          // vm.$router.push('/admin/product');
           vm.$store.dispatch('updateLoading', false);
           this.$bus.$emit('messsage:push', response.data.message, 'danger');
         }

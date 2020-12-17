@@ -42,7 +42,7 @@
                 <span><i aria-hidden="true" class="fas fa-shopping-cart"></i></span>
                 <span class="badge badge-pill badge-danger shop-cart"
                 v-if="cartProducts.carts && cartProducts.carts.length>0">
-                  {{cartProducts.carts.length}}
+                  {{ cartProducts.carts.length }}
                 </span>
               </a>
               <div class="dropdown-menu dropdown-menu-right blur"
@@ -61,9 +61,9 @@
                     </thead>
                     <tbody v-for="item in cartProducts.carts" :key="item.id">
                       <tr>
-                        <td style="text-align:center">{{item.product.title}}</td>
-                        <td>{{item.qty}}{{item.product.unit}}</td>
-                        <td>{{item.product.price | currency}}</td>
+                        <td style="text-align:center">{{ item.product.title }}</td>
+                        <td>{{ item.qty }}{{ item.product.unit }}</td>
+                        <td>{{ item.product.price | currency }}</td>
                         <td>
                           <div class="cart_del_btn" style="cursor:pointer"
                             @click.prevent="delCartItem(item.id)">
@@ -93,26 +93,6 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="dropdown">
-              <button class="btn-shop-cart "
-                type="button"
-                data-flip="false"
-                data-toggle="dropdown"
-                aria-expanded="false">
-                <span><i aria-hidden="true" class="fas fa-shopping-cart"></i></span>
-                <span class="badge badge-pill badge-danger shop-cart">1</span>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div> -->
-            <!-- <router-link
-            to="/customer_cart"
-            class="nav-link p-3">
-              <span><i class="fas fa-shopping-cart"></i></span>
-            </router-link> -->
           </li>
         </ul>
       </div>

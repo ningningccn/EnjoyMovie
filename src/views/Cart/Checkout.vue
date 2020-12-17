@@ -70,7 +70,7 @@ export default {
     getOrderId() {
       const vm = this;
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/order/${vm.orderId}`;
-      this.$http.get(api).then((response) => {
+      vm.$http.get(api).then((response) => {
         console.log(response);
         vm.order = response.data.order;
       });
@@ -78,7 +78,7 @@ export default {
     payOrder() {
       const vm = this;
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/pay/${vm.orderId}`;
-      this.$http.post(api).then((response) => {
+      vm.$http.post(api).then((response) => {
         console.log(response);
         vm.getOrderId();
       });
@@ -87,7 +87,6 @@ export default {
   created() {
     this.orderId = this.$route.params.orderId;
     // params 網址上的orderid
-    console.log(this.orderId);
     this.getOrderId();
   },
 };

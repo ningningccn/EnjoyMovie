@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '*',
-    redirect: '/', // 輸入沒有的路徑會被帶回首頁
+    redirect: '/',
   },
   {
     path: '/login',
