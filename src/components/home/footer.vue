@@ -1,5 +1,5 @@
 <template>
-  <div class ="footer">
+  <div class ="footer ">
     © Copright 2020 Enjoy Movie 不作任何商業用途 純屬練習作品
   </div>
 </template>

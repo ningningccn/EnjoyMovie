@@ -36,22 +36,55 @@ export default {
       });
     },
     addToCart(context, { id, qty }) {
+      const tempCarts = context.state.cartProducts;
+      const oncecart = tempCarts.carts.filter((item) => item.product_id === id);
+      if (oncecart.length >= 1) {
+        context.dispatch('delCartItem', oncecart[0].id);
+        const tempProductid = oncecart[0].product_id;
+        const tempNums = oncecart[0].qty + qty;
+        // console.log(tempNums, tempProductid);
+        context.commit('LOADING', true, { root: true });
+        const cart = {
+          product_id: tempProductid,
+          qty: tempNums,
+        };
+        const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
+        context.commit('LOADING', true, { root: true });
+        axios.post(api, { data: cart }).then((response) => {
+          if (response.data.success) {
+            context.dispatch('getCart');
+            context.commit('LOADING', false, { root: true });
+          } else {
+            context.commit('LOADING', false, { root: true });
+          }
+        });
+      } else {
+        const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
+        context.commit('LOADING', true, { root: true });
+        const cart = {
+          product_id: id,
+          qty,
+        };
+        axios.post(api, { data: cart }).then((response) => {
+          if (response.data.success) {
+            context.dispatch('getCart');
+            context.commit('LOADING', false, { root: true });
+          }
+          context.commit('LOADING', false, { root: true });
+        });
+      }
+    },
+    changeQty(context, cart) {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
       context.commit('LOADING', true, { root: true });
-      const cart = {
-        product_id: id,
-        qty,
-      };
       axios.post(api, { data: cart }).then((response) => {
         if (response.data.success) {
           context.dispatch('getCart');
-          console.log(context);
           context.commit('LOADING', false, { root: true });
         }
         context.commit('LOADING', false, { root: true });
       });
     },
-
   },
   getters: {
     cartProducts: (state) => state.cartProducts,

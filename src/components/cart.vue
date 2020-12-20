@@ -3,19 +3,19 @@
     <table class="table mt-4 text-white">
       <thead>
         <tr>
-          <td style="width:20%">產品</td>
-          <td></td>
-          <td style="width:15%">數量</td>
-          <td style="width:15%">單價</td>
+          <th style="width:20%">產品</th>
+          <th></th>
+          <th class="d-md-table-cell d-none" style="width:15%">數量</th>
+          <th style="width:15%">單價</th>
         </tr>
       </thead>
       <tbody v-for="item in cartProducts.carts " :key="item.id">
         <tr>
-          <td>
-            <img :src="item.product.imageUrl" alt=""
+          <td style="width:25%">
+            <img :src="item.product.imageUrl" alt="product-imageUrl"
             class="img-fluid">
           </td>
-          <td style="vertical-align:middle"> <!--商品名稱-->
+          <td style="vertical-align:middle; width:25%"> <!--商品名稱-->
             <div >
               <h4>{{ item.product.title }}</h4>
               <span class="cart-category"
@@ -24,9 +24,22 @@
               </span>
             </div>
             <div class="text-success" v-if="item.coupon">已套用優惠卷</div>
+            <div class="btn-group w-100 d-md-none mt-3" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-light">-</button>
+              <button type="button" class="btn btn-light"> {{ item.qty }} </button>
+              <button type="button" class="btn btn-light" @click="changeQty(item, true)">
+                +
+              </button>
+            </div>
           </td>
-          <td style="vertical-align: middle;"> <!--數量-->
-            {{ item.qty }} {{ item.product.unit }}
+          <td class="d-md-table-cell d-none" style="vertical-align: middle;"> <!--數量-->
+            <div class="btn-group w-100" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-light">-</button>
+              <button type="button" class="btn btn-light"> {{ item.qty }} </button>
+              <button type="button" class="btn btn-light" @click="changeQty(item, true)">
+                +
+              </button>
+            </div>
           </td>
           <!-- 價錢 -->
           <td class="text-right h6" style="vertical-align: middle;">
@@ -36,10 +49,10 @@
             </div>
             <del
               v-if="item.final_total !== item.total">
-              {{ item.product.price | currency }}
+              {{ item.final_total | currency }}
             </del>
             <div v-if="item.final_total === item.total">
-              {{ item.product.price | currency }}
+              {{ item.final_total | currency }}
             </div>
             <div class="text-success py-3" v-if="item.final_total !== item.total" >
               {{ item.final_total | currency }}
@@ -50,7 +63,7 @@
       <tfoot>
         <tr>
           <td width='80'></td>
-          <td></td>
+          <td class="d-md-table-cell d-none"></td>
           <td width="200">總計</td>
           <td width="200" class="text-right"> {{ cartProducts.total | currency }}</td>
         </tr>
@@ -85,6 +98,7 @@ export default {
   data() {
     return {
       coupon_code: '',
+      mode: true,
     };
   },
   methods: {
@@ -102,6 +116,22 @@ export default {
           vm.getCart();
         }
       });
+    },
+    changeQty(item, mode) {
+      if (mode) {
+        const num = item.qty + 1;
+        const cart = {
+          product_id: item.product_id,
+          qty: num,
+        };
+        this.$store.dispatch('cartModules/delCartItem', item.id);
+        this.$store.dispatch('cartModules/changeQty', cart);
+      } else {
+        // num = item.qty - 1;
+      }
+      console.log('123');
+      // this.$store.dispatch('cartModules/delCartItem', item.id);
+      // console.log(item.product_id, item.qty);
     },
     ...mapActions('cartModules', ['getCart']),
     // 拿到getCart Function 的語法
