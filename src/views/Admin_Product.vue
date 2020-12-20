@@ -267,7 +267,7 @@ export default {
         if (response.data.success) {
           vm.$set(vm.tempProduct, 'imageUrl', response.data.imageUrl); // 強制(位置),(欄位),(上傳的連結)
         } else {
-          this.$bus.$emit('messsage:push', response.data.message, 'danger');
+          vm.$bus.$emit('messsage:push', response.data.message, 'danger');
         }
       });
     },

@@ -35,14 +35,19 @@ const routes = [
   },
   // Cart購物車
   {
+    path: '/customer_cart',
+    name: '/Customer_Cart',
+    component: () => import('../views/Cart/Cart.vue'),
+  },
+  {
     path: '/customer_checkout/:orderId',
     name: '/Coustomer_Checkout',
     component: () => import('../views/Cart/Checkout.vue'),
   },
   {
-    path: '/customer_cart',
-    name: '/Customer_Cart',
-    component: () => import('../views/Cart/Cart.vue'),
+    path: '/customer_cartform',
+    name: '/Customer_CheckForm',
+    component: () => import('../views/Cart/CheckForm.vue'),
   },
   // 後台
   {

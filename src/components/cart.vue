@@ -4,7 +4,7 @@
       <thead>
         <tr>
           <th style="width:20%">產品</th>
-          <th></th>
+          <th style="width:35%"></th>
           <th class="d-md-table-cell d-none" style="width:15%">數量</th>
           <th style="width:15%">單價</th>
         </tr>
@@ -25,7 +25,9 @@
             </div>
             <div class="text-success" v-if="item.coupon">已套用優惠卷</div>
             <div class="btn-group w-100 d-md-none mt-3" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-light">-</button>
+              <button type="button" class="btn btn-light" @click="changeQty(item, false)">
+                -
+              </button>
               <button type="button" class="btn btn-light"> {{ item.qty }} </button>
               <button type="button" class="btn btn-light" @click="changeQty(item, true)">
                 +
@@ -34,7 +36,10 @@
           </td>
           <td class="d-md-table-cell d-none" style="vertical-align: middle;"> <!--數量-->
             <div class="btn-group w-100" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-light">-</button>
+              <button type="button" class="btn btn-light " :disabled="item.qty === 1"
+              @click="changeQty(item, false)">
+                -
+              </button>
               <button type="button" class="btn btn-light"> {{ item.qty }} </button>
               <button type="button" class="btn btn-light" @click="changeQty(item, true)">
                 +
@@ -49,7 +54,7 @@
             </div>
             <del
               v-if="item.final_total !== item.total">
-              {{ item.final_total | currency }}
+              {{ item.total | currency }}
             </del>
             <div v-if="item.final_total === item.total">
               {{ item.final_total | currency }}
@@ -69,7 +74,7 @@
         </tr>
         <tr v-if=" cartProducts.total !== cartProducts.final_total">
           <td width='80'></td>
-          <td></td>
+          <td class="d-md-table-cell d-none"></td>
           <td width="200">折扣價</td>
           <td width="200" class="text-right text-success">
             {{ cartProducts.final_total | currency }}
@@ -113,7 +118,10 @@ export default {
       };
       vm.$http.post(api, { data: coupon }).then((response) => {
         if (response.data.success) {
+          vm.$bus.$emit('messsage:push', response.data.message, 'danger');
           vm.getCart();
+        } else {
+          vm.$bus.$emit('messsage:push', response.data.message, 'danger');
         }
       });
     },
@@ -127,11 +135,14 @@ export default {
         this.$store.dispatch('cartModules/delCartItem', item.id);
         this.$store.dispatch('cartModules/changeQty', cart);
       } else {
-        // num = item.qty - 1;
+        const num = item.qty + -1;
+        const cart = {
+          product_id: item.product_id,
+          qty: num,
+        };
+        this.$store.dispatch('cartModules/delCartItem', item.id);
+        this.$store.dispatch('cartModules/changeQty', cart);
       }
-      console.log('123');
-      // this.$store.dispatch('cartModules/delCartItem', item.id);
-      // console.log(item.product_id, item.qty);
     },
     ...mapActions('cartModules', ['getCart']),
     // 拿到getCart Function 的語法

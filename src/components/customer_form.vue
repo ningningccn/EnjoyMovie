@@ -1,5 +1,5 @@
 <template>
-  <div class ="form d-flex justify-content-center mt-5">
+  <div class ="form d-flex justify-content-center mt-5 text-white">
     <form class="col-md-6 " @submit.prevent="createOrder">
       <div class="form-group">
         <label for="useremail">Email</label>
@@ -12,8 +12,8 @@
           {{ errors.first('email') }}
         </span>
       </div>
-      <div class="form-group">
-        <label for="username">收件人姓名</label>
+      <div class="form-group ">
+        <label for="username">收件人姓名:</label>
         <input type="text" class="form-control" name="name" id="username"
           v-model="form.user.name"
           v-validate="'required'"
@@ -28,7 +28,7 @@
           v-validate="'required'"
           placeholder="請輸入電話"
           :class="{'is-invalid':errors.has('tel')}">
-        <span class="text-danger" v-if="errors.has('tel')">姓名必須輸入</span>
+        <span class="text-danger" v-if="errors.has('tel')">電話必須輸入</span>
       </div>
       <div class="form-group">
         <label for="useraddress">收件人地址</label>

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="my-5 row justify-content-center">
-      <form class="col-md-6" @submit.prevent="payOrder">
-        <table class="table">
+    <div class="my-5 row justify-content-center ">
+      <form class="col-md-6 " @submit.prevent="payOrder">
+        <table class="table text-white">
           <thead>
             <th>品名</th>
             <th>數量</th>
@@ -22,7 +22,7 @@
             </tr>
           </tfoot>
         </table>
-        <table class="table">
+        <table class="table text-white">
           <tbody>
             <tr>
               <th width="100">Email</th>

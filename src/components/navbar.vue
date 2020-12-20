@@ -47,7 +47,7 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right blur"
                 aria-labelledby="dropdownMenuButton"
-                style="min-width:400px; padding-bottom:50px">
+                style="min-width:400px; padding:50px 30px">
                 <div class="cart">
                   <table class="table"
                     v-if="cartProducts.carts && cartProducts.carts.length>0">
@@ -73,7 +73,10 @@
                       </tr>
                     </tbody>
                   </table>
-                  <div v-if="cartProducts.carts && cartProducts.carts.length === 0">沒有東西</div>
+                  <div class="text-center mb-5"
+                    v-if="cartProducts.carts && cartProducts.carts.length === 0">
+                      暫時沒有商品
+                  </div>
                   <div v-if="cartProducts.carts && cartProducts.carts.length > 0">
                     <router-link to="/customer_cart"
                       class="btn btn-dark w-100 p-2 float-right
@@ -162,8 +165,8 @@ export default {
 .dropdown-menu{
   padding:20px ;
   border-radius: 15px;
-  backdrop-filter: blur(30px);
-  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(60px);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 .blur{
   backdrop-filter: blur(20px);
@@ -172,8 +175,8 @@ export default {
 .dropdown-menu{
   padding:20px ;
   border-radius: 15px;
-  backdrop-filter: blur(30px);
-  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(60px);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 </style>
