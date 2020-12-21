@@ -67,8 +67,6 @@ export default {
   methods: {
     ...mapActions('productModules', ['getProduct']),
     getProduct_detail(id) {
-      // console.log(id);
-      // $('#productModal').modal('show');
       const vm = this;
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/product/${id}`;
       this.$store.dispatch('updateLoading', true);
@@ -78,9 +76,8 @@ export default {
           vm.product.num = 1;
           $('#productModal').modal('show');
           this.$store.dispatch('updateLoading', false);
-          console.log('done');
         } else {
-          console.log('eorro');
+          this.$store.dispatch('updateLoading', false);
         }
       });
     },
@@ -99,36 +96,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .example-3d {
-    width: 100%;
-    height:100%;
-    padding: 50px 0;
+.example-3d {
+  width: 100%;
+  height:100%;
+  padding: 50px 0;
+}
+img{
+  width: 100%;
+}
+.swiper {
+  height: 100%;
+  width: 100%;
+  padding: 50px 0px;
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 400px;
+    text-align: center;
+    font-weight: bold;
+    // font-size: $font-size-huge * 2;
+    background-color: #fff;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
   }
-  img{
-    width: 100%;
-  }
-  .swiper {
-    height: 100%;
-    width: 100%;
-    padding: 50px 0px;
-    .swiper-slide {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 300px;
-      height: 400px;
-      text-align: center;
-      font-weight: bold;
-      // font-size: $font-size-huge * 2;
-      background-color: #2C8DFB;
-      background-position: center;
-      background-size: cover;
-      color: #fff;
+  .swiper-pagination {
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background-color: #fff;
     }
-    .swiper-pagination {
-      .swiper-pagination-bullet.swiper-pagination-bullet-active {
-        background-color: #fff;
-      }
-    }
   }
+}
 </style>
