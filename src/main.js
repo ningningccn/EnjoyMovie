@@ -21,7 +21,6 @@ import VueI18n from 'vue-i18n';
 import zhTW from '../node_modules/vee-validate/dist/locale/zh_TW';
 
 // Vue本身
-
 import App from './App.vue';
 import router from './router';
 import store from './store';
