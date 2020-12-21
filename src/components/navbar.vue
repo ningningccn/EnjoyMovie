@@ -78,7 +78,7 @@
                       暫時沒有商品
                   </div>
                   <div v-if="cartProducts.carts && cartProducts.carts.length > 0">
-                    <router-link to="/customer_cart"
+                    <router-link to="/cart/checkproduct"
                       class="btn btn-dark w-100 p-2 float-right
                       btn-block router-link-exact-avtive
                       router-link-active">

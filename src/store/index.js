@@ -18,7 +18,7 @@ export default new Vuex.Store({
     },
     TEMPCATEGORY(state, payload) {
       state.tempCategory = payload;
-      console.log(state.tempCategory);
+      // console.log(state.tempCategory);
     },
     // PRODUCTS(state, payload) {
     //   state.products = payload;

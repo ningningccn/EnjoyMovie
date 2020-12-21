@@ -39,7 +39,7 @@ export default {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/product/${id}`;
       vm.$http.get(api).then((response) => {
         if (response.data.success) {
-          console.log(response.data);
+          // console.log(response.data);
           vm.OnceProduct = response.data.product;
           vm.OnceProduct.num = 1;
           $('#productModal').modal('show');

@@ -1,5 +1,10 @@
 <template>
   <div class="cart">
+    <div class="form text-white">
+      <div class="form-step active">1.確認購物車</div>
+      <div class="form-step">2.填寫訂單資訊</div>
+      <div class="form-step">3.完成購買</div>
+    </div>
     <table class="table mt-4 text-white">
       <thead>
         <tr>
@@ -91,7 +96,10 @@
         @click.prevent="addCouponCode" >
           套用優惠碼
         </button>
-      </div>
+    </div>
+    </div>
+    <div class="text-right">
+      <button type="button" class='btn btn-danger w-25' @click="nextStep">下一步</button>
     </div>
   </div>
 </template>
@@ -144,6 +152,9 @@ export default {
         this.$store.dispatch('cartModules/changeQty', cart);
       }
     },
+    nextStep() {
+      this.$router.push('cartform');
+    },
     ...mapActions('cartModules', ['getCart']),
     // 拿到getCart Function 的語法
   },
@@ -156,3 +167,19 @@ export default {
 };
 
 </script>
+<style scoped>
+.form {
+  display: flex;
+  justify-content: center;
+}
+.form-step {
+  margin: 30px 0;
+  padding: 15px;
+  font-size: 16px;
+}
+.form-step.active {
+  background-color: #ff5f00;
+  border-radius: 10px;
+  color: #fff
+}
+</style>
