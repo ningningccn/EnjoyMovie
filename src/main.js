@@ -34,7 +34,6 @@ Vue.use(VueI18n);
 // swiper
 Vue.use(VueAwesomeSwiper/* { default options with global component } */);
 swiper.use([Navigation, Pagination, Controller, Autoplay, EffectCoverflow]);
-// Vue.use(VideoPlayer);
 
 // Loading全域宣告
 Vue.component('Loading', Loading);
@@ -70,7 +69,6 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
-/* eslint-disable no-new */
 new Vue({
   router,
   store,

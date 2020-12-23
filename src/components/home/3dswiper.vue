@@ -69,15 +69,15 @@ export default {
     getProduct_detail(id) {
       const vm = this;
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/product/${id}`;
-      this.$store.dispatch('updateLoading', true);
-      this.$http.get(api).then((response) => {
+      vm.$store.dispatch('updateLoading', true);
+      vm.$http.get(api).then((response) => {
         if (response.data.success) {
           vm.product = response.data.product;
           vm.product.num = 1;
           $('#productModal').modal('show');
-          this.$store.dispatch('updateLoading', false);
+          vm.$store.dispatch('updateLoading', false);
         } else {
-          this.$store.dispatch('updateLoading', false);
+          vm.$store.dispatch('updateLoading', false);
         }
       });
     },

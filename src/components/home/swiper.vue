@@ -60,8 +60,6 @@ export default {
     this.$nextTick(() => {
       const swiperTop = this.$refs.swiperTop.$swiper;
       const swiperThumbs = this.$refs.swiperThumbs.$swiper;
-      console.log(swiperTop);
-      console.log(this);
       swiperTop.controller.control = swiperThumbs;
       swiperThumbs.controller.control = swiperTop;
     });

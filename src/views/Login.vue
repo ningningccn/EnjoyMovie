@@ -56,7 +56,7 @@ export default {
           vm.$store.dispatch('updateLoading', false);
         } else {
           vm.$store.dispatch('updateLoading', false);
-          this.$bus.$emit('messsage:push', response.data.message, 'danger');
+          vm.$bus.$emit('messsage:push', response.data.message, 'danger');
         }
       });
     },

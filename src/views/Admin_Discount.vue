@@ -143,10 +143,10 @@ export default {
   },
   methods: {
     getDiscounts(page = 1) {
-      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupons?page=${page}`;
       const vm = this;
+      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupons?page=${page}`;
       vm.isLoading = true;
-      this.$http.get(api).then((response) => {
+      vm.$http.get(api).then((response) => {
         // eslint-disable-next-line no-console
         console.log(response.data);
         vm.isLoading = false;
@@ -170,11 +170,11 @@ export default {
       let api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon`;
       let httpMethod = 'post';
       vm.isLoading = true;
-      if (!this.isNew) {
-        api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon/${this.tempDiscounts.id}`;
+      if (!vm.isNew) {
+        api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon/${vm.tempDiscounts.id}`;
         httpMethod = 'put';
       }
-      this.$http[httpMethod](api, { data: vm.tempDiscounts }).then((response) => {
+      vm.$http[httpMethod](api, { data: vm.tempDiscounts }).then((response) => {
         if (response.data.success) {
           $('#DiscountModal').modal('hide');
           vm.getDiscounts();
