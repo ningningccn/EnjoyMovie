@@ -38,12 +38,10 @@
         </tr>
       </tbody>
     </table>
-
     <!-- 切換頁 Start-->
     <Pagination :pagination="pagination" @event="getDiscounts"></Pagination>
-
       <!-- 建立 Modal -->
-      <div class="modal fade" id="DiscountModal" tabindex="-1" role="dialog"
+    <div class="modal fade" id="DiscountModal" tabindex="-1" role="dialog"
       aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content border-0">
@@ -89,7 +87,6 @@
               </div>
             </form>
           </div>
-
           <!-- modal-body -->
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">取消</button>
@@ -98,7 +95,6 @@
         </div>
       </div>
     </div>
-
     <!-- delModal -->
     <div class="modal"  id="openDeldiscountModal" tabindex="-1">
       <div class="modal-dialog">
@@ -112,7 +108,6 @@
           <div class="modal-body">
             <p>優惠名稱:{{ tempDiscounts.title }}</p>
           </div>
-
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" @click="delDiscount">確定刪掉</button>
@@ -120,7 +115,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 

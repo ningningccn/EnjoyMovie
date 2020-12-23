@@ -17,8 +17,7 @@
       <tbody v-for="item in cartProducts.carts " :key="item.id">
         <tr>
           <td style="width:25%">
-            <img :src="item.product.imageUrl" alt="product-imageUrl"
-            class="img-fluid">
+            <img :src="item.product.imageUrl" alt="product-imageUrl" class="img-fluid">
           </td>
           <td style="vertical-align:middle; width:25%"> <!--商品名稱-->
             <div >
@@ -107,7 +106,6 @@
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
-  // props: ['cartProductSD'],
   data() {
     return {
       coupon_code: '',

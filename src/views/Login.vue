@@ -9,19 +9,20 @@
             <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
             <label for="inputEmail" class="sr-only">Email address</label>
             <input type="email" id="inputEmail" class="form-control"
-            placeholder="Email address"
-            v-model="user.username" required autofocus>
+              placeholder="Email address"
+              v-model="user.username" required autofocus>
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="inputPassword" class="form-control"
-            placeholder="Password"
-            v-model="user.password" required>
+              placeholder="Password"
+              v-model="user.password" required>
             <div class="checkbox mb-3">
               <label>
-                <input type="checkbox" value="remember-me"> Remember me
+                <input type="checkbox" value="remember-me">Remember me
               </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block"
-            @click.prevent="signin" type="submit">Sign in</button>
+              @click.prevent="signin" type="submit">Sign in
+            </button>
           </form>
         </main>
       </div>

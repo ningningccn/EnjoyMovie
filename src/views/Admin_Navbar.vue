@@ -5,11 +5,11 @@
         <img src="../assets/Ning_LogoW.png" alt="logo" >
       </router-link>
       <button class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false" aria-label="Toggle navigation">
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -25,10 +25,10 @@
           </li>
           <li class="nav-item">
             <router-link class="nav-link"
-            to="/admin/discount" active-class="active">優惠卷</router-link>
+              to="/admin/discount" active-class="active">優惠卷</router-link>
           </li>
         </ul>
-          <ul class="nav navbar-right" >
+        <ul class="nav navbar-right" >
           <li class="nav-item text-nowrap">
             <a class="nav-link" href="#" @click.prevent="signout">登出</a>
           </li>

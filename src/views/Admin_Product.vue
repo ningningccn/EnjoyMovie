@@ -18,7 +18,7 @@
       </thead>
       <tbody class="itemlist">
         <tr v-for="item in products" :key="item.id">
-          <td><img :src="item.imageUrl" alt="" width="60"></td>
+          <td><img :src="item.imageUrl" alt="Product-imageUrl" width="60"></td>
           <td>{{ item.category }} </td>
           <td>{{ item.title }} </td>
           <td class="text-right">
@@ -72,7 +72,7 @@
                     ref="files" @change="uploadFile">
                 </div>
                 <img img="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=828346ed697837ce808cae68d3ddc3cf&auto=format&fit=crop&w=1350&q=80"
-                  class="img-fluid" alt="" :src="tempProduct.imageUrl">
+                  class="img-fluid" alt="link" :src="tempProduct.imageUrl">
               </div>
               <div class="col-sm-8">
                 <div class="form-group">
@@ -81,7 +81,6 @@
                     placeholder="請輸入標題"
                     v-model="tempProduct.title">
                 </div>
-
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="category">類別</label>
@@ -96,7 +95,6 @@
                       v-model="tempProduct.unit">
                   </div>
                 </div>
-
                 <div class="form-row">
                   <div class="form-group col-md-6">
                   <label for="origin_price">原價</label>
@@ -112,7 +110,6 @@
                   </div>
                 </div>
                 <hr>
-
                 <div class="form-group">
                   <label for="description">電影簡介</label>
                   <textarea type="text" class="form-control" id="description"
@@ -148,7 +145,6 @@
         </div>
       </div>
     </div><!-- 建立新產品/修改 Modal End -->
-
     <!-- 刪除 Modal Start -->
     <div class="modal"  id="productModalDel" tabindex="-1">
       <div class="modal-dialog">
@@ -170,7 +166,6 @@
       </div>
     </div><!-- 刪除 Modal End -->
     <Pagination :pagination="pagination" @event="getapiProducts"></Pagination>
-
   </div>
 </template>
 <script>

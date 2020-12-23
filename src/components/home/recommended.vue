@@ -16,9 +16,9 @@
                 到達下一個任務地點「無限列車」，並與鬼殺隊炎柱・煉獄杏壽郎會合，一同調查列車上的四十多人失蹤事件，而下弦之壹・魘夢也潛伏在列車之中。
               </h6>
               <div class="col-md-12 row d-flex ">
-                <img class="col-4 px-1" src="../../assets/movie_hot/2.jpg" alt="">
-                <img class="col-4 px-1" src="../../assets/movie_hot/fire.jpeg" alt="">
-                <img class="col-4 px-1" src="../../assets/movie_hot/3.jpg" alt="">
+                <img class="col-4 px-1" src="../../assets/movie_hot/2.jpg" alt="hot-img">
+                <img class="col-4 px-1" src="../../assets/movie_hot/fire.jpeg" alt="hot-img">
+                <img class="col-4 px-1" src="../../assets/movie_hot/3.jpg" alt="hot-img">
               </div>
             </div>
         </div>
