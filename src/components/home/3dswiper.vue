@@ -18,8 +18,10 @@
               <h3 class ="text-center" >電影簡介</h3>
               {{ product.description }}
             </div>
-            <button class="btn btn-secondary w-100"
-            @click.prevent="product_detail(product.id)">想了解更多</button>
+            <button type="button" class="btn btn-secondary w-100"
+              @click.prevent="product_detail(product.id)">
+              想了解更多
+            </button>
           </div>
         </div>
       </div>

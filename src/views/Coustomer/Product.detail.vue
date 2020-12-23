@@ -31,8 +31,8 @@
                 選購 {{ num }} {{ product.unit }}
               </option>
             </select>
-            <button class="btn btn-secondary mt-5 w-100"
-            @click.prevent="addToCart(product.id, product.num)">
+            <button class="btn btn-secondary mt-5 w-100" type="button"
+              @click.prevent="addToCart(product.id, product.num)">
               加入購物車
             </button>
           </div>

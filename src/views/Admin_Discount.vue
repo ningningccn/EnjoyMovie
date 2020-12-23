@@ -141,8 +141,6 @@ export default {
       const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupons?page=${page}`;
       vm.isLoading = true;
       vm.$http.get(api).then((response) => {
-        // eslint-disable-next-line no-console
-        console.log(response.data);
         vm.isLoading = false;
         vm.discounts = response.data.coupons;
         vm.pagination = response.data.pagination;
@@ -179,8 +177,7 @@ export default {
     },
     openDel_discountModal(item) {
       const vm = this;
-      const temparray = {};
-      vm.tempDiscounts = Object.assign(temparray, item);
+      vm.tempDiscounts = { ...item };
       $('#openDeldiscountModal').modal('show');
     },
     delDiscount() {

@@ -61,14 +61,19 @@
             </tbody>
           </table>
           <div class="text-right" v-if="order.is_paid === false">
-            <button class="btn btn-danger">確認付款去</button>
+            <button type="button" class="btn btn-danger">
+              確認付款去
+            </button>
           </div>
           <div class="text-center text-white"
-          v-if="order.is_paid === true">
+            v-if="order.is_paid === true">
             <h1>付款成功</h1>
             <h4 class='mt-3'>開始享受你的電影吧！</h4>
             <h6 class="mt-5">或是...</h6>
-            <button class='btn btn-secondary mt-4' @click="moveToProducts">購買更多電影！</button>
+            <button type="button" class='btn btn-secondary mt-4'
+              @click="moveToProducts">
+              購買更多電影！
+            </button>
           </div>
         </form>
       </div>
