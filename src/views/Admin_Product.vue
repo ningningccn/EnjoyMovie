@@ -204,8 +204,7 @@ export default {
         this.tempProduct = {};
         this.isNew = true;
       } else {
-        const tempobj = {}; // 解決eslint bug?
-        this.tempProduct = Object.assign(tempobj, item); // ({},item) es6 方法將item 物件傳入 避免有參考特性
+        this.tempProduct = { ...item }; // ({},item) es6 方法將item 物件傳入 避免有參考特性
         this.isNew = false;
       }
       $('#productModal').modal('show');
@@ -229,8 +228,7 @@ export default {
     },
     delModal(item) {
       const vm = this;
-      const tempobj = {};
-      vm.tempProduct = Object.assign(tempobj, item);
+      vm.tempProduct = { ...item };
       $('#productModalDel').modal('show');
     },
     delProduct() {

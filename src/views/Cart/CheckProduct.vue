@@ -3,6 +3,7 @@
     <Cart/>
   </div>
 </template>
+
 <script>
 import Cart from '@/components/cart.vue';
 

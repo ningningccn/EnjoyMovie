@@ -5,9 +5,9 @@
     <h2 class="text-white" v-if="tempCategory === '劇情'">劇情類</h2>
     <h2 class="text-white" v-if="tempCategory === '愛情'">愛情類</h2>
     <h2 class="text-white" v-if="tempCategory === '動畫'">動畫類</h2>
-    <Card></Card>
+    <Card/>
     <Pagination :pagination="pagination" @event="getProduct"
-    v-if="tempCategory===''"></Pagination>
+      v-if="tempCategory===''"></Pagination>
   </div>
 </template>
 

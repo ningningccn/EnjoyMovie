@@ -78,7 +78,6 @@ export default {
       background-size: cover;
       background-position: center;
       height: 100%;
-
       &.slide-1 {
         background-image:
         url('../../assets/movie_banner/1.jpg');
@@ -99,7 +98,6 @@ export default {
         background-image:url('../../assets/movie_banner/5.jpg');
       }
     }
-
     &.gallery-top {
       height: 85%;
       width: 100%;

@@ -153,8 +153,7 @@ export default {
         this.tempDiscounts = {};
         this.isNew = true;
       } else {
-        const temparray = {};
-        this.tempDiscounts = Object.assign(temparray, item);
+        this.tempDiscounts = { ...item }; // Object.assign(temparray, item);
         this.isNew = false;
       }
       $('#DiscountModal').modal('show');

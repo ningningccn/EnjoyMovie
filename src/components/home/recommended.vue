@@ -46,11 +46,6 @@ export default {
   background-color: rgba(0, 0, 0,0.3);
   border-radius: 15px;
 }
-/* img{
-  max-width: 100%;
-  height: auto;
-  border-radius: 15px;
-} */
 h1 ,h4 ,h6{
   color: #fff;
 }

@@ -35,8 +35,6 @@ export default {
   computed: {
     ...mapGetters('productModules', ['products', 'filterCategory']),
   },
-  created() {
-  },
 };
 </script>
 <style  scoped>
