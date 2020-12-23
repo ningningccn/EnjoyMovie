@@ -67,7 +67,7 @@
             @click="backStep">
             上一步
           </button>
-          <button type="button" class="btn btn-danger">
+          <button type="submit" class="btn btn-secondary">
             送出訂單
           </button>
         </div>

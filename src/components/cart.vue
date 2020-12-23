@@ -98,7 +98,7 @@
     </div>
     </div>
     <div class="text-right">
-      <button type="button" class='btn btn-danger w-25' @click="nextStep">下一步</button>
+      <button type="button" class='btn btn-secondary w-25' @click="nextStep">下一步</button>
     </div>
   </div>
 </template>

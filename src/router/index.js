@@ -81,11 +81,11 @@ const routes = [
         component: () => import('../views/Admin_Discount.vue'),
         meta: { requiresAuth: true },
       },
-      {
-        path: '*',
-        redirect: '/',
-      },
     ],
+  },
+  {
+    path: '*',
+    redirect: '/',
   },
 ];
 

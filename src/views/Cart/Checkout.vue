@@ -61,7 +61,7 @@
             </tbody>
           </table>
           <div class="text-right" v-if="order.is_paid === false">
-            <button type="button" class="btn btn-danger">
+            <button type="submit" class="btn btn-secondary">
               確認付款去
             </button>
           </div>
