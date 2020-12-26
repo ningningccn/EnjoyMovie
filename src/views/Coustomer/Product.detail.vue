@@ -10,10 +10,12 @@
           </div>
           <div class="context-right col-10 mt-4 mx-auto col-md-6">
             <h1>{{product.title}}</h1>
-            <h6 class="text-secondary">類別:{{ product.category }}</h6>
+            <h6 class="text-secondary">類別:{{ product.category }}
+            </h6>
+            <span class="text-secondary">時長:{{ product.content }}分鐘</span>
             <div
               style="margin-bottom:30px;font-size:18px">
-              {{product.description}}
+              {{ product.description }}
             </div>
             <del style="font-size:30px;"
               v-if="product.origin_price">

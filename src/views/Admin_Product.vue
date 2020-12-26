@@ -113,14 +113,14 @@
                 <div class="form-group">
                   <label for="description">電影簡介</label>
                   <textarea type="text" class="form-control" id="description"
-                    placeholder="請輸入產品描述"
+                    placeholder="請輸入電影簡介"
                     v-model="tempProduct.description"></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="content">說明內容</label>
-                  <textarea type="text" class="form-control" id="content"
-                    placeholder="請輸入產品說明內容"
-                    v-model="tempProduct.content"></textarea>
+                  <label for="description">片長(分鐘)</label>
+                  <input type="number" class="form-control" id="description"
+                    placeholder="請輸入片長"
+                    v-model="tempProduct.content"></input>
                 </div>
                 <div class="form-group">
                   <div class="form-check">
@@ -144,7 +144,8 @@
           </div>
         </div>
       </div>
-    </div><!-- 建立新產品/修改 Modal End -->
+    </div>
+    <!-- 建立新產品/修改 Modal End -->
     <!-- 刪除 Modal Start -->
     <div class="modal"  id="productModalDel" tabindex="-1">
       <div class="modal-dialog">
