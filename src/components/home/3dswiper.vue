@@ -125,7 +125,7 @@ img{
   }
   .swiper-pagination {
     .swiper-pagination-bullet.swiper-pagination-bullet-active {
-      background-color: #fff;
+      background: #fff;
     }
   }
 }
