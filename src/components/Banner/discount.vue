@@ -1,12 +1,34 @@
 <template>
   <div>
-    <img src="@/assets/movie_banner/Discount_Banner.jpg" alt="DiscountBanner">
+    <div class="banner">
+      <div class="container d-md-flex text-center">
+        <img class="col-md-6 py-2"
+          src="@/assets/banner_img/cart/banner(new_open).png" alt="banner(new_open)">
+        <img class="col-md-6 py-2"
+          src="@/assets/banner_img/cart/banner(code).png" alt="banner(code)">
+      </div>
+    </div>
   </div>
 </template>
 <style scoped>
-img{
+.banner {
   width: 100%;
+  min-height: 300px;
+  margin-top: -73px;
+  background-image: url('../../assets/banner_img/cart/banner(BG1).jpg');
+  background-size: cover;
+  position: relative;
+}
+@media(max-width: 768px){
+  .banner{
+    min-height: 400px;
+  }
+}
+.container{
+  padding-top: 100px;
+}
+img {
+  width: 80%;
   height: auto;
-  margin-top: -80px;
 }
 </style>
