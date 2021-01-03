@@ -168,23 +168,23 @@ export default {
     height: 100%;
     &.slide-1 {
       background-image:
-      url('../../assets/banner_img/home/waterman(banner).jpg');
+      url('../../assets/Banner(img)/Home/waterman(banner).jpg');
     }
     &.slide-2 {
       background-image:
-      url('../../assets/banner_img/home/deadpool(banner).jpg');
+      url('../../assets/Banner(img)/Home/deadpool(banner).jpg');
     }
     &.slide-3 {
       background-image:
-      url('../../assets/banner_img/home/wonderwoman(banner).jpg');
+      url('../../assets/Banner(img)/Home/wonderwoman(banner).jpg');
     }
     &.slide-4 {
       background-image:
-      url('../../assets/banner_img/home/mr.onj(banner).jpg');
+      url('../../assets/Banner(img)/Home/mr.onj(banner).jpg');
     }
     &.slide-5 {
       background-image:
-      url('../../assets/banner_img/home/speed8(banner).jpg');
+      url('../../assets/Banner(img)/Home/speed8(banner).jpg');
     }
   }
   &.gallery-top {

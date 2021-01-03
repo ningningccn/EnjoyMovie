@@ -82,19 +82,19 @@ body {
   padding-bottom: 40px;
   background-color: #f5f5f5;
 }
+main {
+  padding-bottom: 150px;
+}
 .bg-img {
   background-image: url('../assets/login_background.jpeg');
   height: 100%;
   background-size: cover;
   background-position:center;
 }
-.bg-blur{
+.bg-blur {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(5px ) brightness(80%);
-}
-main{
-  padding-bottom: 150px;
 }
 .form-signin {
   width: 100%;

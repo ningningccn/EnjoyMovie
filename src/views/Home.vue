@@ -12,7 +12,7 @@
         <div class="new text-white h2 mt-5 pt-4 text-center">
           最新上映
         </div>
-        <ThreeDswiper/>
+        <ThreeDSwiper/>
       </div>
     </div>
   </div>
@@ -21,17 +21,17 @@
 <script>
 // @ is an alias to /src
 import Navbar from '@/components/navbar.vue';
-import Recommended from '@/components/home/recommended.vue';
-import Swiper from '@/components/home/swiper.vue';
-import ThreeDswiper from '@/components/home/3dswiper.vue';
+import Swiper from '@/components/home/Swiper.vue';
+import Recommended from '@/components/home/Recommended.vue';
+import ThreeDSwiper from '@/components/home/ThreeDSwiper.vue';
 
 export default {
   name: 'Home',
   components: {
     Navbar,
-    Recommended,
     Swiper,
-    ThreeDswiper,
+    Recommended,
+    ThreeDSwiper,
   },
 };
 </script>
@@ -41,7 +41,7 @@ export default {
   position: relative;
 }
 .background-img {
-  background-image: url('../assets/CINE-TIMES.jpg');
+  background-image: url('/src/assets/CINE-TIMES.jpg');
   position:absolute;
   width: 100%;
   height:100%;

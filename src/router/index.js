@@ -19,12 +19,12 @@ const routes = [
   {
     path: '/coustomer_Product',
     name: 'Coustomer_Product',
-    component: () => import('../views/Coustomer/Product.vue'),
+    component: () => import('../views/Front/Product/Product.vue'),
     children: [
       {
         path: 'category',
         name: 'Category',
-        component: () => import('../views/Coustomer/Category.vue'),
+        component: () => import('../views/Front/Product/page/Category.vue'),
       },
     ],
   },
