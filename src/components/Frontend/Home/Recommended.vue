@@ -38,7 +38,7 @@ export default {
 <style scoped>
 .main{
   background-color: rgb(38, 31, 31);
-  background-image:url('~@/assets/movie_hot/unnamed_Ed.jpg');
+  background-image:url('~@/assets/Banner(img)/Home/movie_hot/unnamed_Ed.jpg');
   background-size: cover;
   background-position:center;
   width: 100%;
