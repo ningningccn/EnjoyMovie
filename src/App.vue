@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Footer from '@/components/home/footer.vue';
+import Footer from '@/components/Frontend/Home/Footer.vue';
 
 export default {
   components: {

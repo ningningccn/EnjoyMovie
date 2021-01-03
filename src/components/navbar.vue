@@ -3,7 +3,7 @@
     :class="{'bgc':scrollPostion>30}">
     <nav class="navbar container-fluid d-flex justify-conext-between ">
       <router-link to="/" class="px-4">
-        <img src="../assets/Ning_LogoW.png" alt="Logo" width="60px">
+        <img src="@/assets/Image/Logo/EnjoyMovie.png" alt="Logo" width="60px">
       </router-link>
       <button
         class="navbar-toggler text-white"

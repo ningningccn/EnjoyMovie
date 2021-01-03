@@ -13,8 +13,8 @@
 
 <script>
 import $ from 'jquery';
-import Pagination from '@/components/pagination.vue';
-import Card from '@/components/card.vue';
+import Pagination from '@/components/Pagination.vue';
+import Card from '@/components/Frontend/Product/Card.vue';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {

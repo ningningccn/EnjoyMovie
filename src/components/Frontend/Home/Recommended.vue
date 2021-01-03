@@ -6,7 +6,7 @@
         <div class="recommend-body row col-md-12 d-flex mx-auto">
             <div class="col-lg-6 col-md-12 d-flex justify-content-center mb-4" >
               <video class="video col-12" loop="true" autoplay="autoplay"  muted="true" >
-                <source type="video/mp4" src="../../assets/mp4/123.mp4">
+                <source type="video/mp4" src="@/assets/Banner(img)/Home/mp4/123.mp4">
               </video>
             </div>
             <div class="recommend-bodyleft  col-lg-6 col-md-12 ">
@@ -16,9 +16,12 @@
                 到達下一個任務地點「無限列車」，並與鬼殺隊炎柱・煉獄杏壽郎會合，一同調查列車上的四十多人失蹤事件，而下弦之壹・魘夢也潛伏在列車之中。
               </h6>
               <div class="col-md-12 row d-flex ">
-                <img class="col-4 px-1" src="../../assets/movie_hot/2.jpg" alt="hot-img">
-                <img class="col-4 px-1" src="../../assets/movie_hot/fire.jpeg" alt="hot-img">
-                <img class="col-4 px-1" src="../../assets/movie_hot/3.jpg" alt="hot-img">
+                <img class="col-4 px-1" src="@/assets/Banner(img)/Home/movie_hot/2.jpg"
+                  alt="hot-img">
+                <img class="col-4 px-1" src="@/assets/Banner(img)/Home/movie_hot/fire.jpeg"
+                  alt="hot-img">
+                <img class="col-4 px-1" src="@/assets/Banner(img)/Home/movie_hot/3.jpg"
+                  alt="hot-img">
               </div>
             </div>
         </div>
@@ -35,7 +38,7 @@ export default {
 <style scoped>
 .main{
   background-color: rgb(38, 31, 31);
-  background-image:url('../../assets/movie_hot/unnamed_Ed.jpg');
+  background-image:url('~@/assets/movie_hot/unnamed_Ed.jpg');
   background-size: cover;
   background-position:center;
   width: 100%;

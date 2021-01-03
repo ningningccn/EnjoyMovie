@@ -20,9 +20,9 @@
 </template>
 
 <script>
-import Navbar from '@/components/navbar.vue';
-import Banner from '@/components/Front/Layout/Product/Banner.vue';
-import Allcategory from '@/components/Front/Layout/Product/All_category.vue';
+import Navbar from '@/components/Navbar.vue';
+import Banner from '@/components/Frontend/Product/Banner.vue';
+import Allcategory from '@/components/Frontend/Product/All_category.vue';
 
 export default {
   components: {
@@ -37,7 +37,7 @@ export default {
   margin-top: -75px;
 }
 .background {
-  background-image: url('/src/assets/CINE-TIMES.jpg');
+  background-image: url('~@/assets/Image/Background/News(BG).jpg');
   width: 100%;
   height: auto;
   background-size: cover;

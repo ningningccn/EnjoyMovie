@@ -11,8 +11,8 @@
 
 <script>
 import Alert from '@/components/AlertMessage.vue';
-import Banner from '@/components/Banner/discount.vue';
-import Navbar from '@/components/navbar.vue';
+import Banner from '@/components/Frontend/Cart/Banner.vue';
+import Navbar from '@/components/Navbar.vue';
 
 export default {
   data() {

@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <router-link class="mr-5" to="/">
-        <img src="../assets/Ning_LogoW.png" alt="logo" >
+        <img src="@/assets/Image/Logo/EnjoyMovie.png" alt="logo" >
       </router-link>
       <button class="navbar-toggler"
         type="button"

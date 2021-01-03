@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../views/Login.vue'),
+    component: () => import('../views/Frontend/Login/Login.vue'),
   },
   {
     path: '/',
@@ -19,66 +19,66 @@ const routes = [
   {
     path: '/coustomer_Product',
     name: 'Coustomer_Product',
-    component: () => import('../views/Front/Product/Product.vue'),
+    component: () => import('../views/Frontend/Product/Product.vue'),
     children: [
       {
         path: 'category',
         name: 'Category',
-        component: () => import('../views/Front/Product/page/Category.vue'),
+        component: () => import('../views/Frontend/Product/page/Category.vue'),
       },
     ],
   },
   {
     path: '/product_detail/:productId',
     name: '/Product_detail',
-    component: () => import('../views/Coustomer/Product.detail.vue'),
+    component: () => import('../views/Frontend/Product/Product.detail.vue'),
   },
   // Cart購物車
   {
     path: '/cart',
-    name: '/Customer_Cart',
-    component: () => import('../views/Cart/Cart.vue'),
+    name: 'Cart',
+    component: () => import('../views/Frontend/Cart/Cart.vue'),
     children: [
       {
         path: 'checkproduct',
         name: 'CheckProduct',
-        component: () => import('../views/Cart/CheckProduct.vue'),
+        component: () => import('../views/Frontend/Cart/page/CheckProduct.vue'),
       },
       {
         path: 'cartform',
         name: 'CheckForm',
-        component: () => import('../views/Cart/CheckForm.vue'),
+        component: () => import('../views/Frontend/Cart/page/CheckForm.vue'),
       },
       {
         path: 'checkout/:orderId',
         name: 'Checkout',
-        component: () => import('../views/Cart/Checkout.vue'),
+        component: () => import('../views/Frontend/Cart/page/Checkout.vue'),
       },
     ],
   },
-  // 後台
+  // Backend
   {
     path: '/admin',
     name: 'dashboard',
-    component: () => import('../views/Admin_Dashboard.vue'),
+    component: () => import('../views/Backend/Dashboard.vue'),
     meta: { requiresAuth: true },
     children: [
       {
         path: 'product',
         name: 'Product',
-        component: () => import('../views/Admin_Product.vue'),
+        component: () => import('../views/Backend/page/Product/Product.vue'),
         meta: { requiresAuth: true },
       },
       {
         path: 'orderlist',
         name: 'OrderList',
-        component: () => import('../views/Admin_OrderList.vue'),
+        component: () => import('../views/Backend/page/OrderList/OrderList.vue'),
         meta: { requiresAuth: true },
       },
       {
         path: 'discount',
         name: 'Discount',
-        component: () => import('../views/Admin_Discount.vue'),
+        component: () => import('../views/Backend/page/Discount/Discount.vue'),
         meta: { requiresAuth: true },
       },
     ],

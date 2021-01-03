@@ -30,7 +30,7 @@
   </div>
 </template>
 <script>
-import Navbar from '@/components/navbar.vue';
+import Navbar from '@/components/Navbar.vue';
 import Alert from '@/components/AlertMessage.vue';
 
 export default {
@@ -86,7 +86,7 @@ main {
   padding-bottom: 150px;
 }
 .bg-img {
-  background-image: url('../assets/login_background.jpeg');
+  background-image: url('~@/assets/Image/Background/login(BG).jpeg');
   height: 100%;
   background-size: cover;
   background-position:center;

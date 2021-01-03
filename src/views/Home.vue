@@ -20,10 +20,10 @@
 
 <script>
 // @ is an alias to /src
-import Navbar from '@/components/navbar.vue';
-import Swiper from '@/components/home/Swiper.vue';
-import Recommended from '@/components/home/Recommended.vue';
-import ThreeDSwiper from '@/components/home/ThreeDSwiper.vue';
+import Navbar from '@/components/Navbar.vue';
+import Swiper from '@/components/Frontend/Home/Swiper.vue';
+import Recommended from '@/components/Frontend/Home/Recommended.vue';
+import ThreeDSwiper from '@/components/Frontend/Home/ThreeDSwiper.vue';
 
 export default {
   name: 'Home',
@@ -41,7 +41,7 @@ export default {
   position: relative;
 }
 .background-img {
-  background-image: url('/src/assets/CINE-TIMES.jpg');
+  background-image: url('~@/assets/Image/Background/News(BG).jpg');
   position:absolute;
   width: 100%;
   height:100%;

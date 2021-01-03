@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Navbar from '@/views/Admin_Navbar.vue';
+import Navbar from '@/components/Backend/Navbar.vue';
 import Alert from '@/components/AlertMessage.vue';
 
 export default {
@@ -28,7 +28,7 @@ export default {
   height: auto;
 }
 .bg-img {
-  background-image: url('../assets/admin_bg.jpg');
+  background-image: url('~@/assets/Image/Background/admin(bg).jpg');
   width: 100%;
   height: 100%;
   background-size: cover;
