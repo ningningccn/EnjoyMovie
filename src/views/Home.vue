@@ -36,7 +36,7 @@ export default {
 };
 </script>
 <style scoped>
-.background{
+/* .background{
   height: 100%;
   position: relative;
 }
@@ -61,5 +61,5 @@ export default {
 }
 .new {
   position: relative;
-}
+} */
 </style>

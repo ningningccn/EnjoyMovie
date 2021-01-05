@@ -108,6 +108,9 @@ export default {
               vm.$store.dispatch('updateLoading', false);
             }
           });
+        } else {
+          vm.$bus.$emit('messsage:push', '資料還沒填好', 'danger');
+          vm.$store.dispatch('updateLoading', false);
         }
       });
     },

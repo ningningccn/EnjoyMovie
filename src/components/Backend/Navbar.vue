@@ -30,7 +30,7 @@
         </ul>
         <ul class="nav navbar-right" >
           <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#" @click.prevent="signout">登出</a>
+            <a class="nav-link" href="#" @click.prevent="signOut">登出</a>
           </li>
         </ul>
       </div>
@@ -41,7 +41,7 @@
 <script>
 export default {
   methods: {
-    signout() {
+    signOut() {
       const vm = this;
       const api = `${process.env.VUE_APP_API}/logout`;
       vm.$store.dispatch('updateLoading', true);

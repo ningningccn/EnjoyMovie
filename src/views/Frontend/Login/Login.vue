@@ -21,7 +21,7 @@
               </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block"
-              @click.prevent="signin" type="submit">Sign in
+              @click.prevent="signIn" type="submit">Sign in
             </button>
           </form>
         </main>
@@ -47,7 +47,7 @@ export default {
     Alert,
   },
   methods: {
-    signin() {
+    signIn() {
       const vm = this;
       const api = `${process.env.VUE_APP_API}/admin/signin`;
       vm.$store.dispatch('updateLoading', true);
