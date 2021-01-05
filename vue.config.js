@@ -1,3 +1,4 @@
 module.exports = {
-  publicPath: '/EnjoyMovie/dist/',
+  publicPath: './',
+  // publicPath: '/EnjoyMovie/dist/',
 };
