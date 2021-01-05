@@ -40,18 +40,6 @@ export default {
   },
 };
 </script>
-<style scoped>
-.page-item.active .page-link {
-  z-index: 3;
-  color: #000;
-  background-color: #fff;
-  border-color: #fff;
-}
-.page-item.disabled .page-link{
-  background-color: #000;
-}
-.page-link {
-  color:#fff;
-  background-color: #000;
-}
+<style lang="scss">
+@import "~@/assets/scss/components/_pagination.scss";
 </style>

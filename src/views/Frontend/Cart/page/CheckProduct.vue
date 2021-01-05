@@ -165,19 +165,7 @@ export default {
 };
 
 </script>
-<style scoped>
-.form {
-  display: flex;
-  justify-content: center;
-}
-.form-step {
-  margin: 30px 0;
-  padding: 15px;
-  font-size: 16px;
-}
-.form-step.active {
-  background-color: #ff5f00;
-  border-radius: 10px;
-  color: #fff
-}
+<style lang="scss">
+@import "~@/assets/scss/_cart";
+
 </style>

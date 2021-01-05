@@ -31,7 +31,7 @@ const routes = [
   {
     path: '/product_detail/:productId',
     name: '/Product_detail',
-    component: () => import('../views/Frontend/Product/Product.detail.vue'),
+    component: () => import('../views/Frontend/Product/Product_detail.vue'),
   },
   // Cart購物車
   {

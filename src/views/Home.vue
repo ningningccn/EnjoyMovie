@@ -35,7 +35,8 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss">
+@import "~@/assets/scss/_home";
 /* .background{
   height: 100%;
   position: relative;

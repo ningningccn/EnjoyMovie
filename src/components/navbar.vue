@@ -135,48 +135,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.navbar-nav a{
-  font-size: 16px;
-  text-decoration: none;
-  color:#fff;
-}
-.navbar-login a{
-  font-size: 20px;
-}
-.logo img{
-  width: 100%;
-  color: #fff;
-}
-.bgc {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-/* 購物車 */
-.btn-shop-cart{
-  background-color: rgba(250, 250, 250, 0);
-  position: relative;
-}
-.shop-cart{
-  position: absolute;
-  top:3px;
-  right:-2px;
-  font-size: 13px;
-};
-.dropdown-menu{
-  padding:20px ;
-  border-radius: 15px;
-  backdrop-filter: blur(60px);
-  background-color: rgba(255, 255, 255, 0.7);
-}
-.blur{
-  backdrop-filter: blur(20px);
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.dropdown-menu{
-  padding:20px ;
-  border-radius: 15px;
-  backdrop-filter: blur(60px);
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
+<style lang="scss">
+@import "~@/assets/scss/components/_navbar.scss";
 </style>

@@ -32,19 +32,6 @@ export default {
   },
 };
 </script>
-<style scoped>
-.video{
-  margin-top: -75px;
-}
-.background {
-  background-image: url('~@/assets/Image/Background/News(BG).jpg');
-  width: 100%;
-  height: auto;
-  background-size: cover;
-  background-position: center;
-}
-.bg-blur{
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.7);
-}
+<style lang="scss">
+@import "~@/assets/scss/_product";
 </style>
