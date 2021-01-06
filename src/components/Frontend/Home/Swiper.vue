@@ -166,23 +166,23 @@ export default {
     height: 100%;
     &.slide-1 {
       background-image:
-      url('~@/assets/Banner(img)/Home/Swiper/waterman(banner).jpg');
+      url('~@/assets/Image/Banner(img)/Home/Swiper/waterman(banner).jpg');
     }
     &.slide-2 {
       background-image:
-      url('~@/assets/Banner(img)/Home/Swiper/deadpool(banner).jpg');
+      url('~@/assets/Image/Banner(img)/Home/Swiper/deadpool(banner).jpg');
     }
     &.slide-3 {
       background-image:
-      url('~@/assets/Banner(img)/Home/Swiper/wonderwoman(banner).jpg');
+      url('~@/assets/Image/Banner(img)/Home/Swiper/wonderwoman(banner).jpg');
     }
     &.slide-4 {
       background-image:
-      url('~@/assets/Banner(img)/Home/Swiper/mr.onj(banner).jpg');
+      url('~@/assets/Image/Banner(img)/Home/Swiper/mr.onj(banner).jpg');
     }
     &.slide-5 {
       background-image:
-      url('~@/assets/Banner(img)/Home/Swiper/speed8(banner).jpg');
+      url('~@/assets/Image/Banner(img)/Home/Swiper/speed8(banner).jpg');
     }
   }
   &.gallery-top {

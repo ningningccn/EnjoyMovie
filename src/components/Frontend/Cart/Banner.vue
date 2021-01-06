@@ -2,9 +2,9 @@
   <div class='banner'>
     <div class='container d-md-flex text-center'>
       <img class='col-md-6 py-2'
-        src='@/assets/Banner(img)/Cart/banner(new_open).png' alt='banner(new_open)'>
+        src='@/assets/Image/Banner(img)/Cart/banner(new_open).png' alt='banner(new_open)'>
       <img class='col-md-6 py-2'
-        src='@/assets/Banner(img)/Cart/banner(code).png' alt='banner(code)'>
+        src='@/assets/Image/Banner(img)/Cart/banner(code).png' alt='banner(code)'>
     </div>
   </div>
 </template>
@@ -13,7 +13,7 @@
   width: 100%;
   min-height: 300px;
   margin-top: -73px;
-  background-image: url('~@/assets/Banner(img)/Cart/banner(BG1).jpg');
+  background-image: url('~@/assets/Image/Banner(img)/Cart/banner(BG1).jpg');
   background-size: cover;
   position: relative;
 }
