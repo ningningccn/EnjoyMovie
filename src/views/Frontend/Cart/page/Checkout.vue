@@ -1,42 +1,42 @@
 <template>
   <div>
-    <div class="form text-white">
-      <div class="form-step ">1.確認購物車</div>
-      <div class="form-step ">2.填寫訂單資訊</div>
-      <div class="form-step active">3.完成購買</div>
+    <div class='form text-white'>
+      <div class='form-step'>1.確認購物車</div>
+      <div class='form-step'>2.填寫訂單資訊</div>
+      <div class='form-step active'>3.完成購買</div>
     </div>
     <div>
-      <div class="my-5 row justify-content-center ">
-        <form class="col-10 col-md-10 " @submit.prevent="payOrder">
-          <table class="table text-white">
+      <div class='my-5 row justify-content-center'>
+        <form class='col-10 col-md-10' @submit.prevent='payOrder'>
+          <table class='table text-white'>
             <thead>
-              <th class="w-25"></th>
+              <th class='w-25'></th>
               <th>品名</th>
               <th>數量</th>
               <th>單價</th>
             </thead>
             <tbody>
-              <tr v-for="item in order.products" :key="item.id">
+              <tr v-for='item in order.products' :key='item.id'>
                 <td>
-                  <img class="img-fluid" :src="item.product.imageUrl" alt="product_imageUrl">
+                  <img class='img-fluid' :src='item.product.imageUrl' alt='product_imageUrl'>
                 </td>
-                <td class="align-middle">{{ item.product.title }}</td>
-                <td class="align-middle">{{ item.qty }}{{ item.product.unit }}</td>
-                <td class="align-middle text-right">{{ item.final_total | currency }}</td>
+                <td class='align-middle'>{{ item.product.title }}</td>
+                <td class='align-middle'>{{ item.qty }}{{ item.product.unit }}</td>
+                <td class='align-middle text-right'>{{ item.final_total | currency }}</td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
                 <td></td>
-                <td colspan="2" class="text-right">總計</td>
-                <td class="text-right text-success">{{ order.total | currency }}</td>
+                <td colspan='2' class='text-right'>總計</td>
+                <td class='text-right text-success'>{{ order.total | currency }}</td>
               </tr>
             </tfoot>
           </table>
-          <table class="table text-white">
+          <table class='table text-white'>
             <tbody>
               <tr>
-                <th width="100">Email</th>
+                <th width='100'>Email</th>
                 <td>{{ order.user.email }}</td>
               </tr>
               <tr>
@@ -54,24 +54,24 @@
               <tr>
                 <th>付款狀態</th>
                 <td>
-                  <span v-if="!order.is_paid" class="text-danger">尚未付款</span>
-                  <span v-else class="text-success">付款完成</span>
+                  <span v-if='!order.is_paid' class='text-danger'>尚未付款</span>
+                  <span v-else class='text-success'>付款完成</span>
                 </td>
               </tr>
             </tbody>
           </table>
-          <div class="text-right" v-if="order.is_paid === false">
-            <button type="submit" class="btn btn-secondary">
+          <div class='text-right' v-if='order.is_paid === false'>
+            <button type='submit' class='btn btn-secondary'>
               確認付款去
             </button>
           </div>
-          <div class="text-center text-white"
-            v-if="order.is_paid === true">
+          <div class='text-center text-white'
+            v-if='order.is_paid === true'>
             <h1>付款成功</h1>
             <h4 class='mt-3'>開始享受你的電影吧！</h4>
-            <h6 class="mt-5">或是...</h6>
-            <button type="button" class='btn btn-secondary mt-4'
-              @click="moveToProducts">
+            <h6 class='mt-5'>或是...</h6>
+            <button type='button' class='btn btn-secondary mt-4'
+              @click='moveToProducts'>
               購買更多電影！
             </button>
           </div>
@@ -122,6 +122,6 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-@import "~@/assets/scss/cart";
+<style lang='scss'>
+@import '~@/assets/scss/cart';
 </style>

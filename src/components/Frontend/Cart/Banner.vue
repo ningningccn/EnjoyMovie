@@ -1,10 +1,10 @@
 <template>
-  <div class="banner">
-    <div class="container d-md-flex text-center">
-      <img class="col-md-6 py-2"
-        src="@/assets/Banner(img)/Cart/banner(new_open).png" alt="banner(new_open)">
-      <img class="col-md-6 py-2"
-        src="@/assets/Banner(img)/Cart/banner(code).png" alt="banner(code)">
+  <div class='banner'>
+    <div class='container d-md-flex text-center'>
+      <img class='col-md-6 py-2'
+        src='@/assets/Banner(img)/Cart/banner(new_open).png' alt='banner(new_open)'>
+      <img class='col-md-6 py-2'
+        src='@/assets/Banner(img)/Cart/banner(code).png' alt='banner(code)'>
     </div>
   </div>
 </template>

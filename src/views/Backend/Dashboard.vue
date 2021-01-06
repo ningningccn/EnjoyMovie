@@ -1,10 +1,10 @@
 <template>
-  <div class="dashboard">
+  <div class='dashboard'>
     <Navbar/>
-    <div class="bg-img"></div>
-    <div class="bg-blur"></div>
+    <div class='bg-img'></div>
+    <div class='bg-blur'></div>
     <AlertMessage/>
-    <main role="main" class="container p-4 rounded shadow" >
+    <main role='main' class='container p-4 rounded shadow'>
       <router-view></router-view>
     </main>
   </div>
@@ -22,6 +22,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "~@/assets/scss/dashboard.scss";
+<style lang='scss'>
+@import '~@/assets/scss/dashboard.scss';
 </style>

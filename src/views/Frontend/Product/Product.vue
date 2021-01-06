@@ -2,14 +2,14 @@
   <div>
     <Navbar/>
     <Banner/>
-    <div class="background">
-      <div class="bg-blur">
-        <div class="container py-5">
-          <div class="context d-flex row mx-auto">
-            <div class="col-12 col-lg-3 ">
+    <div class='background'>
+      <div class='bg-blur'>
+        <div class='container py-5'>
+          <div class='context d-flex row mx-auto'>
+            <div class='col-12 col-lg-3'>
               <Allcategory/>
             </div>
-            <div class="col-10 col-md-12 col-lg-9 mx-auto" >
+            <div class='col-10 col-md-12 col-lg-9 mx-auto' >
               <router-view></router-view>
             </div>
           </div>
@@ -32,6 +32,6 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-@import "~@/assets/scss/product";
+<style lang='scss'>
+@import '~@/assets/scss/product';
 </style>

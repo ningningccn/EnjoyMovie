@@ -1,26 +1,26 @@
 <template>
   <div>
-    <nav aria-label="Page navigation example">
-      <ul class="pagination justify-content-center">
-        <li class="page-item"
-          :class="{'disabled':!pagination.has_pre}">
-          <a class="page-link" href="#" aria-label="Previous"
-          @click.prevent="getpage(pagination.current_page -1)" >
-            <span aria-hidden="true">&laquo;</span>
+    <nav aria-label='Page navigation example'>
+      <ul class='pagination justify-content-center'>
+        <li class='page-item'
+          :class='{"disabled":!pagination.has_pre}'>
+          <a class='page-link' href='#' aria-label='Previous'
+          @click.prevent='getpage(pagination.current_page -1)' >
+            <span aria-hidden='true'>&laquo;</span>
           </a>
         </li>
-        <li class="page-item" v-for="page in pagination.total_pages" :key="page"
-          :class="{'active': pagination.current_page === page}" >
-          <a class="page-link" href="#"
-            @click.prevent="getpage(page)">
+        <li class='page-item' v-for='page in pagination.total_pages' :key='page'
+          :class='{"active": pagination.current_page === page}' >
+          <a class='page-link' href='#'
+            @click.prevent='getpage(page)'>
             {{ page }}
           </a>
         </li>
-        <li class="page-item" :class="{'disabled':!pagination.has_next}">
-          <a class="page-link" href="#"
-            @click.prevent="getpage(pagination.current_page +1)"
-            aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
+        <li class='page-item' :class='{"disabled":!pagination.has_next}'>
+          <a class='page-link' href='#'
+            @click.prevent='getpage(pagination.current_page +1)'
+            aria-label='Next'>
+            <span aria-hidden='true'>&raquo;</span>
           </a>
         </li>
       </ul>
@@ -40,6 +40,6 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-@import "~@/assets/scss/components/pagination.scss";
+<style lang='scss'>
+@import '~@/assets/scss/components/pagination.scss';
 </style>
