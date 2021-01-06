@@ -117,9 +117,9 @@
                     v-model='tempProduct.description'></textarea>
                 </div>
                 <div class='form-group'>
-                  <label for='description'>片長(分鐘)</label>
-                  <input type='number' class='form-control' id='description'
-                    placeholder='請輸入片長'
+                  <label for='description'>預告片網址</label>
+                  <input type='text' class='form-control' id='description'
+                    placeholder='輸入網址'
                     v-model='tempProduct.content'></input>
                 </div>
                 <div class='form-group'>
