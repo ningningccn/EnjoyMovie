@@ -114,7 +114,7 @@ img{
     justify-content: center;
     align-items: center;
     width: 300px;
-    height: 400px;
+    // height: 380px;
     text-align: center;
     font-weight: bold;
     // font-size: $font-size-huge * 2;
