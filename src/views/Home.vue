@@ -36,7 +36,7 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@/assets/scss/_home";
+@import "~@/assets/scss/home";
 /* .background{
   height: 100%;
   position: relative;

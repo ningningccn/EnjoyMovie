@@ -30,8 +30,6 @@
   </div>
 </template>
 <script>
-// import Smailswiper from '@/components/smail_swiper.vue';
-
 export default {
 };
 </script>

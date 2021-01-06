@@ -136,5 +136,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~@/assets/scss/components/_navbar.scss";
+@import "~@/assets/scss/components/navbar.scss";
 </style>
