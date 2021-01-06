@@ -5,7 +5,7 @@
       <div class="input-group">
         <input type="mail" placeholder="abc123@mail.com" id="copy" class="form-control">
         <div class="input-group-append">
-          <button class="btn btn-secondary"
+          <button class="btn btn-secondary" type="button"
             data-toggle="modal" data-target="#exampleModal">
             訂閱
           </button>

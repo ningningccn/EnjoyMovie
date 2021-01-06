@@ -3,7 +3,7 @@
     <Navbar/>
     <div class="bg-img"></div>
     <div class="bg-blur"></div>
-    <Alert/>
+    <AlertMessage/>
     <main role="main" class="container p-4 rounded shadow" >
       <router-view></router-view>
     </main>
@@ -12,12 +12,12 @@
 
 <script>
 import Navbar from '@/components/Backend/Navbar.vue';
-import Alert from '@/components/AlertMessage.vue';
+import AlertMessage from '@/components/AlertMessage.vue';
 
 export default {
   components: {
     Navbar,
-    Alert,
+    AlertMessage,
   },
 };
 </script>

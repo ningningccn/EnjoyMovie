@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Alert/>
+    <AlertMessage/>
     <Navbar/>
     <Banner/>
     <div class="container">
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Alert from '@/components/AlertMessage.vue';
+import AlertMessage from '@/components/AlertMessage.vue';
 import Banner from '@/components/Frontend/Cart/Banner.vue';
 import Navbar from '@/components/Navbar.vue';
 
@@ -22,7 +22,7 @@ export default {
     };
   },
   components: {
-    Alert,
+    AlertMessage,
     Navbar,
     Banner,
   },

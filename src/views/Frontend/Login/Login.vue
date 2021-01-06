@@ -3,7 +3,7 @@
     <div class="bg-img">
       <div class="bg-blur">
         <Navbar/>
-        <Alert/>
+        <AlertMessage/>
         <main class="my-5 text-white ">
           <form class="form-signin shadow p-5 rounded">
             <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
@@ -31,7 +31,7 @@
 </template>
 <script>
 import Navbar from '@/components/Navbar.vue';
-import Alert from '@/components/AlertMessage.vue';
+import AlertMessage from '@/components/AlertMessage.vue';
 
 export default {
   data() {
@@ -44,7 +44,7 @@ export default {
   },
   components: {
     Navbar,
-    Alert,
+    AlertMessage,
   },
   methods: {
     signIn() {

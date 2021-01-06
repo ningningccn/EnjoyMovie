@@ -14,7 +14,7 @@
           <th style="width:15%">單價</th>
         </tr>
       </thead>
-      <tbody v-for="item in cartProducts.carts " :key="item.id">
+      <tbody v-for="item in cartProducts.carts" :key="item.id">
         <tr>
           <td style="width:25%">
             <img :src="item.product.imageUrl" alt="product-imageUrl" class="img-fluid">
