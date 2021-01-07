@@ -66,19 +66,19 @@ const routes = [
       {
         path: 'product',
         name: 'Product',
-        component: () => import('../views/Backend/page/Product/Product.vue'),
+        component: () => import('../views/Backend/page/Product.vue'),
         meta: { requiresAuth: true },
       },
       {
         path: 'orderlist',
         name: 'OrderList',
-        component: () => import('../views/Backend/page/OrderList/OrderList.vue'),
+        component: () => import('../views/Backend/page/OrderList.vue'),
         meta: { requiresAuth: true },
       },
       {
         path: 'discount',
         name: 'Discount',
-        component: () => import('../views/Backend/page/Discount/Discount.vue'),
+        component: () => import('../views/Backend/page/Discount.vue'),
         meta: { requiresAuth: true },
       },
     ],

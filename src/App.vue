@@ -26,7 +26,6 @@ export default {
 </script>
 <style lang='scss'>
 @import './assets/scss/all';
-// @import './assets/all';
 body{background-color: #000;}
 #app {
   position: relative;

@@ -37,30 +37,5 @@ export default {
 </script>
 <style lang='scss'>
 @import '~@/assets/scss/home';
-/* .background{
-  height: 100%;
-  position: relative;
-}
-.background-img {
-  background-image: url('~@/assets/Image/Background/News(BG).jpg');
-  position:absolute;
-  width: 100%;
-  height:100%;
-  background-size: cover;
-  background-position:center;
-  filter:blur(10px);
-}
-.container-blur{
-  position:absolute;
-  width: 90%;
-  height: 90%;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50%);
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.new {
-  position: relative;
-} */
+
 </style>
