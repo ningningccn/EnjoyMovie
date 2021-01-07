@@ -10,11 +10,10 @@
     <div class='modal fade' id='productModal' tabindex='-1' role='dialog'
       aria-labelledby='exampleModalLabel' aria-hidden='true'>
       <div class='modal-dialog' role='document'>
-        <div class='modal-content' style=''>
-          <div class='modal-body row' style='background-color:#000;'>
-            <img :src='product.imageUrl' class='mx-auto' alt='product.imageUrl'
-              style='width:70%;height:auto;margin: 0 20px;'>
-              <div class='text-white p-3 mx-auto' >
+        <div class='modal-content'>
+          <div class='modal-body row'>
+            <img :src='product.imageUrl' class='mx-auto' alt='product.imageUrl'>
+              <div class='text-white p-3 mx-auto'>
               <h3 class ='text-center' >電影簡介</h3>
               {{ product.description }}
             </div>
@@ -104,6 +103,14 @@ export default {
 }
 img{
   width: 100%;
+}
+.modal-body {
+  background-color: #000;
+}
+.modal-body img{
+  width: 70%;
+  height: auto;
+  margin: 0 20px;
 }
 .swiper {
   height: 100%;

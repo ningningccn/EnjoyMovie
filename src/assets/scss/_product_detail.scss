@@ -1,0 +1,16 @@
+del {
+  font-size: 30px;
+}
+.blur {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.product-description {
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+.product-price {
+  font-size: 40px;
+}

@@ -24,19 +24,20 @@
   right:-2px;
   font-size: 13px;
 };
-.dropdown-menu{
-  padding:20px ;
-  border-radius: 15px;
-  backdrop-filter: blur(60px);
-  background-color: rgba(255, 255, 255, 0.7);
-}
 .blur{
   backdrop-filter: blur(20px);
   background-color: rgba(0, 0, 0, 0.5);
 }
 .dropdown-menu{
-  padding:20px ;
   border-radius: 15px;
   backdrop-filter: blur(60px);
   background-color: rgba(255, 255, 255, 0.7);
+  min-width: 400px;
+  padding: 50px 30px;
+}
+.cart_del_btn {
+  cursor: pointer;
+}
+.text-align-center {
+  text-align: center;
 }

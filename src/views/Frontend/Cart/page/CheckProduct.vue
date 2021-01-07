@@ -8,22 +8,21 @@
     <table class='table mt-4 text-white'>
       <thead>
         <tr>
-          <th style='width:20%'>產品</th>
-          <th style='width:35%'></th>
-          <th class='d-md-table-cell d-none' style='width:15%'>數量</th>
-          <th style='width:15%'>單價</th>
+          <th width='20%'>產品</th>
+          <th width='35%'></th>
+          <th width='15%' class='d-md-table-cell d-none'>數量</th>
+          <th width='15%'>單價</th>
         </tr>
       </thead>
       <tbody v-for='item in cartProducts.carts' :key='item.id'>
         <tr>
-          <td style='width:25%'>
+          <td>
             <img :src='item.product.imageUrl' alt='product-imageUrl' class='img-fluid'>
           </td>
-          <td style='vertical-align:middle; width:25%'> <!--商品名稱-->
-            <div >
+          <td class='align-middle'> <!--商品名稱-->
+            <div>
               <h4>{{ item.product.title }}</h4>
-              <span class='cart-category'
-                style='background-color:red;padding:4px; border-radius:5px'>
+              <span class='cart-category'>
                 {{ item.product.category }}
               </span>
             </div>
@@ -38,10 +37,12 @@
               </button>
             </div>
           </td>
-          <td class='d-md-table-cell d-none' style='vertical-align: middle;'> <!--數量-->
+          <td class='d-md-table-cell d-none align-middle'> <!--數量-->
             <div class='btn-group w-100' role='group' aria-label='Basic example'>
-              <button type='button' class='btn btn-light' :disabled='item.qty === 1'
-              @click='changeQty(item, false)'>
+              <button type='button'
+                class='btn btn-light'
+                :disabled='item.qty === 1'
+                @click='changeQty(item, false)'>
                 -
               </button>
               <button type='button' class='btn btn-light'> {{ item.qty }} </button>
@@ -51,10 +52,10 @@
             </div>
           </td>
           <!-- 價錢 -->
-          <td class='text-right h6' style='vertical-align: middle;'>
-            <div class='del_btn py-3' style='cursor:pointer;'
+          <td class='text-right h6 align-middle'>
+            <div class='del_btn py-3'
               @click.prevent='delCartItem(item.id)'>
-              <i class='fas fa-times'></i>
+                <i class='fas fa-times'></i>
             </div>
             <del
               v-if='item.final_total !== item.total'>

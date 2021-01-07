@@ -46,14 +46,13 @@
                 </span>
               </a>
               <div class='dropdown-menu dropdown-menu-right blur'
-                aria-labelledby='dropdownMenuButton'
-                style='min-width:400px; padding:50px 30px'>
+                aria-labelledby='dropdownMenuButton'>
                 <div class='cart'>
                   <table class='table'
                     v-if='cartProducts.carts && cartProducts.carts.length>0'>
                     <thead >
                       <tr>
-                        <td width='200' style='text-align:center'>商品名稱</td>
+                        <td class='text-align-center' width='200'>商品名稱</td>
                         <td width='100'>數量</td>
                         <td width='100'>單價</td>
                         <td width='50'></td>
@@ -61,11 +60,11 @@
                     </thead>
                     <tbody v-for='item in cartProducts.carts' :key='item.id'>
                       <tr>
-                        <td style='text-align:center'>{{ item.product.title }}</td>
+                        <td class='text-align-center'>{{ item.product.title }}</td>
                         <td>{{ item.qty }}{{ item.product.unit }}</td>
                         <td>{{ item.product.price | currency }}</td>
                         <td>
-                          <div class='cart_del_btn' style='cursor:pointer'
+                          <div class='cart_del_btn'
                             @click.prevent='delCartItem(item.id)'>
                             <i class='far fa-window-close'></i>
                           </div>
