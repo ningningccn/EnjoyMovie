@@ -121,10 +121,8 @@ img{
     justify-content: center;
     align-items: center;
     width: 300px;
-    // height: 380px;
     text-align: center;
     font-weight: bold;
-    // font-size: $font-size-huge * 2;
     background-color: #fff;
     background-position: center;
     background-size: cover;

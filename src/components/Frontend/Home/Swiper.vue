@@ -176,7 +176,6 @@ export default {
   }
 }
 .banner-context-bg {
-  // background-color: rgba(0, 0, 0, 0.3);
   text-shadow: 1px 1px 12px black;
   padding:40px;
 }
