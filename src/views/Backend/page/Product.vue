@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class='text-right mt-4'>
-      <button type='button' class='btn btn-primary' @click='openModal(true)' >建立新的產品</button>
+      <button type='button' class='btn btn-primary' @click='openModal(true)'>建立新的產品</button>
     </div>
     <!-- 主要內容 -->
     <table class='table mt-4 text-white'>

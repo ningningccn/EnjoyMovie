@@ -6,11 +6,13 @@
         <div class='banner1 d-flex justify-content-start'>
           <div class='banner-context col-12'>
             <div class='banner-context-bg'>
-              <a href='#' class='badge badge-secondary'>動作</a>
+              <a href='#' class='badge badge-secondary p-2'>動作</a>
               <h2>水行俠</h2>
               <p>
                 當年輕的亞瑟庫瑞得知他是水底王國亞特蘭提斯的王位繼承人，他必須作出決定，勇敢引領他的人民並成為這個世界的英雄。
               </p>
+              <button class='btn btn-secondary' type='button'
+              @click.prevent='moveTo(1)'>查看更多</button>
             </div>
           </div>
         </div>
@@ -19,12 +21,15 @@
         <div class='banner1 d-flex justify-content-start'>
           <div class='banner-context col-12'>
             <div class='banner-context-bg'>
-              <a href='#' class='badge badge-secondary'>動作</a>
+              <a href='#' class='badge badge-secondary p-2'>動作</a>
               <h2>惡棍英雄：死侍</h2>
               <p>
                 韋德威爾遜由於得了不治之症而自願加入「Weapon X 計劃」，
                 受到一個不法的實驗組織進行身體實驗性手術，並讓他的身體擁有快速再生的獨特能力，並成為「死侍」。
               </p>
+              <button class='btn btn-secondary' type='button' @click.prevent='moveTo(2)'>
+                查看更多
+              </button>
             </div>
           </div>
         </div>
@@ -33,11 +38,14 @@
         <div class='banner1 d-flex justify-content-start'>
           <div class='banner-context col-12'>
             <div class='banner-context-bg'>
-              <a href='#' class='badge badge-secondary'>動作</a>
+              <a href='#' class='badge badge-secondary p-2'>動作</a>
               <h2>神力女超人</h2>
               <p>
                 來自亞馬遜的女超人戴安娜，離開她的小島來到世界，展現出她的神力與迷人魅力的故事。
               </p>
+              <button class='btn btn-secondary' type='button' @click.prevent='moveTo(3)'>
+                查看更多
+              </button>
             </div>
           </div>
         </div>
@@ -46,11 +54,13 @@
         <div class='banner d-flex justify-content-start'>
           <div class='banner-context col-12'>
             <div class='banner-context-bg'>
-              <a href='#' class='badge badge-secondary'>動作</a>
+              <a href='#' class='badge badge-secondary p-2'>動作</a>
               <h2>凸搥特派員</h2>
               <p>
                 羅溫亞金森重回特務本色。無畏無懼、不怕危險的特務間諜強尼英格力將三度出擊拯救世界！
               </p>
+              <button class='btn btn-secondary' type='button'
+                @click.prevent='moveTo(4)'>查看更多</button>
             </div>
           </div>
         </div>
@@ -59,11 +69,13 @@
         <div class='banner1 d-flex justify-content-start'>
           <div class='banner-context col-12'>
             <div class='banner-context-bg'>
-              <a href='#' class='badge badge-secondary'>動作</a>
+              <a href='#' class='badge badge-secondary p-2'>動作</a>
               <h2>玩命關頭</h2>
               <p>
                 哈柏是一名美國外交安全局菁英探員，與無法無天的不法之徒戴克蕭，這一對死對頭就一直在嗆來嗆去、拳來拳往，試圖把對方打趴。
               </p>
+              <button class='btn btn-secondary' type='button'
+                @click.prevent='moveTo(5)'>查看更多</button>
             </div>
           </div>
         </div></swiper-slide>
@@ -115,6 +127,29 @@ export default {
 
       },
     };
+  },
+  methods: {
+    moveTo(number) {
+      switch (number) {
+        case 1: // 水行俠
+          this.$router.push('/product_detail/-MQerWyyYVuDaX449E7P');
+          break;
+        case 2:
+          this.$router.push('/product_detail/-MQev7nNVqy7ZRyRUair');
+          break;
+        case 3:
+          this.$router.push('/product_detail/-MQeyg_hL5fAPf71aQ1X');
+          break;
+        case 4:
+          this.$router.push('/product_detail/-MQevdK8bzvGpfXmITwF');
+          break;
+        case 5:
+          this.$router.push('/product_detail/-MQcZe9Yj4P9NR6bryjt');
+          break;
+        default:
+          break;
+      }
+    },
   },
   mounted() {
     this.$nextTick(() => {
