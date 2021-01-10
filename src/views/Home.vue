@@ -15,6 +15,9 @@
         <ThreeDSwiper/>
       </div>
     </div>
+    <div>
+      <News/>
+    </div>
   </div>
 </template>
 
@@ -24,6 +27,7 @@ import Navbar from '@/components/Navbar.vue';
 import Swiper from '@/components/Frontend/Home/Swiper.vue';
 import Recommended from '@/components/Frontend/Home/Recommended.vue';
 import ThreeDSwiper from '@/components/Frontend/Home/ThreeDSwiper.vue';
+import News from '@/components/Frontend/Home/News.vue';
 
 export default {
   name: 'Home',
@@ -32,6 +36,7 @@ export default {
     Swiper,
     Recommended,
     ThreeDSwiper,
+    News,
   },
 };
 </script>
