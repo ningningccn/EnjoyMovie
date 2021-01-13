@@ -63,11 +63,11 @@
           v-model='form.message'></textarea>
         </div>
         <div class='d-flex justify-content-between mt-3'>
-          <button type='button' class='btn btn-secondary'
+          <button type='button' class='btn btn-outline-secondary color-btn'
             @click='backStep'>
             上一步
           </button>
-          <button type='submit' class='btn btn-success'>
+          <button type='submit' class='btn btn-secondary'>
             送出訂單
           </button>
         </div>
