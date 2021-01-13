@@ -15,6 +15,7 @@ img {
   overflow : hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
+  text-align: justify;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   }
