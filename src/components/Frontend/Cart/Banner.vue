@@ -1,10 +1,10 @@
 <template>
-  <div class='banner'>
-    <div class='container d-md-flex text-center'>
-      <img class='col-md-6 py-2'
-        src='@/assets/Image/Banner(img)/Cart/banner(new_open).png' alt='banner(new_open)'>
-      <img class='col-md-6 py-2'
-        src='@/assets/Image/Banner(img)/Cart/banner(code).png' alt='banner(code)'>
+  <div class="banner">
+    <div class="container d-md-flex text-center">
+      <img class="col-md-6 py-2"
+        src="@/assets/Image/Banner(img)/Cart/banner(new_open).png" alt="banner(new_open)">
+      <img class="col-md-6 py-2"
+        src="@/assets/Image/Banner(img)/Cart/banner(code).png" alt="banner(code)">
     </div>
   </div>
 </template>
@@ -17,13 +17,8 @@
   background-size: cover;
   position: relative;
 }
-@media(max-width: 768px){
-  .banner{
-    min-height: 400px;
-  }
-}
 .container{
-  padding-top: 100px;
+  padding-top: 80px;
 }
 img {
   width: 80%;
