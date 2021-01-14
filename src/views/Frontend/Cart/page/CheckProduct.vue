@@ -1,9 +1,9 @@
 <template>
   <div class="cart">
-    <div class="form text-white">
-      <div class="form-step active">1.確認購物車</div>
-      <div class="form-step">2.填寫訂單資訊</div>
-      <div class="form-step">3.完成購買</div>
+    <div class="form">
+      <div class="form-step col-10 col-md-4 active">1.確認購物車</div>
+      <div class="form-step d-none d-md-flex col-md-4 justify-content-center">2.填寫訂單資訊</div>
+      <div class="form-step d-none d-md-flex col-md-4 justify-content-center">3.完成購買</div>
     </div>
     <table class="table mt-4 text-white">
       <thead>
@@ -99,7 +99,7 @@
     </div>
     </div>
     <div class="text-right">
-      <button type="button" class="btn btn-secondary w-25" @click="nextStep">下一步</button>
+      <button type="button" class="btn btn-secondary col-4 col-md-2" @click="nextStep">下一步</button>
     </div>
   </div>
 </template>

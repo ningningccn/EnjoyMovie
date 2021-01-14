@@ -1,42 +1,45 @@
 <template>
   <div>
     <div class='form text-white'>
-      <div class='form-step'>1.確認購物車</div>
-      <div class='form-step'>2.填寫訂單資訊</div>
-      <div class='form-step active'>3.完成購買</div>
+      <div class='form-step d-none d-md-flex col-md-4 justify-content-center'>1.確認購物車</div>
+      <div class='form-step d-none d-md-flex col-md-4 justify-content-center'>2.填寫訂單資訊</div>
+      <div class='form-step col-10 col-md-4 active'>3.完成購買</div>
     </div>
     <div>
       <div class='my-5 row justify-content-center'>
-        <form class='col-10 col-md-10' @submit.prevent='payOrder'>
+        <form class='col-12' @submit.prevent='payOrder'>
           <table class='table text-white'>
             <thead>
-              <th class='w-25'></th>
-              <th>品名</th>
-              <th>數量</th>
+              <!-- <th width="20%"></th> -->
+              <th width="35%">品名</th>
+              <th class="text-center">品名/數量</th>
               <th>單價</th>
             </thead>
             <tbody>
               <tr v-for='item in order.products' :key='item.id'>
-                <td>
-                  <img class='img-fluid' :src='item.product.imageUrl' alt='product_imageUrl'>
+                <td class='align-middle'>
+                  <div>
+                    <img class='img-fluid' :src='item.product.imageUrl' alt='product_imageUrl'>
+                  </div>
                 </td>
-                <td class='align-middle'>{{ item.product.title }}</td>
-                <td class='align-middle'>{{ item.qty }}{{ item.product.unit }}</td>
+                <td class='align-middle text-center'>
+                  <p>{{ item.product.title }}</p>
+                  {{ item.qty }} {{ item.product.unit }}
+                </td>
                 <td class='align-middle text-right'>{{ item.final_total | currency }}</td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
-                <td></td>
                 <td colspan='2' class='text-right'>總計</td>
                 <td class='text-right text-success'>{{ order.total | currency }}</td>
               </tr>
             </tfoot>
           </table>
-          <table class='table text-white'>
+          <table class='table text-white text-center'>
             <tbody>
               <tr>
-                <th width='100'>Email</th>
+                <th width="40%">Email</th>
                 <td>{{ order.user.email }}</td>
               </tr>
               <tr>

@@ -176,7 +176,7 @@ export default {
 }
 .banner-context-bg {
   text-shadow: 1px 1px 12px black;
-  padding:40px;
+  padding:20px 10px 20px 10px;
 }
 .thumb-example {
   height: 700px;

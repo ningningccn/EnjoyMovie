@@ -11,7 +11,7 @@
 <style scoped>
 .banner {
   width: 100%;
-  min-height: 300px;
+  min-height: 250px;
   margin-top: -73px;
   background-image: url('~@/assets/Image/Banner(img)/Cart/banner(BG1).jpg');
   background-size: cover;
