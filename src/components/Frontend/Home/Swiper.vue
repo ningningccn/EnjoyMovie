@@ -211,7 +211,6 @@ export default {
   &.gallery-top {
     height: 85%;
     width: 100%;
-    margin-top: -80px;
   }
   &.gallery-thumbs {
     height: 15%;

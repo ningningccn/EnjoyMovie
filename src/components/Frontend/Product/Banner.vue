@@ -14,6 +14,5 @@ export default {
 img{
   width: 100%;
   height: auto;
-  margin-top: -80px;
 }
 </style>

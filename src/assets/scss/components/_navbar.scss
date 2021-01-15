@@ -1,3 +1,4 @@
+// navbar 
 .navbar-nav a{
   font-size: 16px;
   text-decoration: none;
@@ -10,8 +11,22 @@
   width: 100%;
   color: #fff;
 }
-.bgc {
+.bgcY {
   background-color: rgba(0, 0, 0, 0.5);
+}
+@media(max-width: 768px) {
+  .nav {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+.navbar-dark .navbar-toggler {
+  border-color: rgba(255, 255, 255, 1);
+}
+.navbar-dark .navbar-text{
+  color: white;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 1);
 }
 /* 購物車 */
 .btn-shop-cart{
@@ -29,12 +44,21 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 .dropdown-menu{
-  border-radius: 15px;
+  border-radius: 5px;
   backdrop-filter: blur(60px);
   background-color: rgba(255, 255, 255, 0.7);
-  min-width: 400px;
-  padding: 50px 30px;
+  max-width: 300px;
+  padding: 10px 10px;
 }
+.table {
+  font-size: 14px;
+}
+.ellipsis {
+  max-width: 100px;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  }
 .cart_del_btn {
   cursor: pointer;
 }
