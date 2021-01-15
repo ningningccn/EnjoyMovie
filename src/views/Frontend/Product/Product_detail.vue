@@ -1,8 +1,8 @@
 <template>
   <div :style="{backgroundImage:'url(' + product.imageUrl + ')',
     backgroundSize: 'cover', backgroundPosition: 'center'}">
+    <Navbar/>
     <div class='blur pb-5'>
-      <Navbar/>
       <div class='container my-3 pb-5 text-white'>
         <div v-if='product.content' class='text-center py-5'>
           <iframe width='80%' height='400' :src='product.content' frameborder='0'

@@ -1,10 +1,10 @@
 <template>
   <div>
+    <Navbar/>
     <div class='bg-img'>
       <div class='bg-blur'>
-        <Navbar/>
         <AlertMessage/>
-        <main class='my-5 text-white'>
+        <main class='text-white'>
           <form class='form-signin shadow p-5 rounded'>
             <h1 class='h3 mb-3 font-weight-normal'>Please sign in</h1>
             <label for='inputEmail' class='sr-only'>Email address</label>
