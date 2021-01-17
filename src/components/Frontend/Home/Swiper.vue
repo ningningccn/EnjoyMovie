@@ -1,93 +1,93 @@
 <template>
-  <div class='thumb-example'>
+  <div class="thumb-example">
     <!-- swiper1 -->
-    <swiper class='swiper gallery-top banner' :options='swiperOptionTop' ref='swiperTop'>
-      <swiper-slide class='slide-1 text-white'>
-        <div class='banner1 d-flex justify-content-start'>
-          <div class='banner-context col-12'>
-            <div class='banner-context-bg'>
-              <a href='#' class='badge badge-secondary p-2'>動作</a>
+    <swiper class="swiper gallery-top banner" :options="swiperOptionTop" ref="swiperTop">
+      <swiper-slide class="slide-1 text-white">
+        <div class="banner1 d-flex justify-content-start">
+          <div class="banner-context col-12">
+            <div class="banner-context-bg">
+              <a href="#" class="badge badge-secondary p-2">動作</a>
               <h2>水行俠</h2>
               <p>
                 亞瑟庫瑞得知他是亞特蘭提斯的王位繼承人，他必須作出決定，引領他的人民。
               </p>
-              <button class='btn btn-secondary' type='button'
-              @click.prevent='moveTo(1)'>查看更多</button>
+              <button class="btn btn-secondary" type="button"
+              @click.prevent="moveTo(1)">查看更多</button>
             </div>
           </div>
         </div>
       </swiper-slide>
-      <swiper-slide class='slide-2 text-white'>
-        <div class='banner1 d-flex justify-content-start'>
-          <div class='banner-context col-12'>
-            <div class='banner-context-bg'>
-              <a href='#' class='badge badge-secondary p-2'>動作</a>
+      <swiper-slide class="slide-2 text-white">
+        <div class="banner1 d-flex justify-content-start">
+          <div class="banner-context col-12">
+            <div class="banner-context-bg">
+              <a href="#" class="badge badge-secondary p-2">動作</a>
               <h2>惡棍英雄：死侍</h2>
               <p>
                 這位嘴砲英雄將帶著自己新的超能力，向那些毀掉他生活的仇人展開報復。
               </p>
-              <button class='btn btn-secondary' type='button' @click.prevent='moveTo(2)'>
+              <button class="btn btn-secondary" type="button" @click.prevent="moveTo(2)">
                 查看更多
               </button>
             </div>
           </div>
         </div>
       </swiper-slide>
-      <swiper-slide class='slide-3 text-white'>
-        <div class='banner1 d-flex justify-content-start'>
-          <div class='banner-context col-12'>
-            <div class='banner-context-bg'>
-              <a href='#' class='badge badge-secondary p-2'>動作</a>
+      <swiper-slide class="slide-3 text-white">
+        <div class="banner1 d-flex justify-content-start">
+          <div class="banner-context col-12">
+            <div class="banner-context-bg">
+              <a href="#" class="badge badge-secondary p-2">動作</a>
               <h2>神力女超人</h2>
               <p>
                 來自亞馬遜的女超人戴安娜，離開她的小島來到世界，展現出她的神力與迷人魅力的故事。
               </p>
-              <button class='btn btn-secondary' type='button' @click.prevent='moveTo(3)'>
+              <button class="btn btn-secondary" type="button" @click.prevent="moveTo(3)">
                 查看更多
               </button>
             </div>
           </div>
         </div>
       </swiper-slide>
-      <swiper-slide class='slide-4 text-white'>
-        <div class='banner d-flex justify-content-start'>
-          <div class='banner-context col-12'>
-            <div class='banner-context-bg'>
-              <a href='#' class='badge badge-secondary p-2'>動作</a>
+      <swiper-slide class="slide-4 text-white">
+        <div class="banner d-flex justify-content-start">
+          <div class="banner-context col-12">
+            <div class="banner-context-bg">
+              <a href="#" class="badge badge-secondary p-2">動作</a>
               <h2>凸搥特派員</h2>
               <p>
                 羅溫亞金森重回特務本色。無畏無懼、不怕危險的特務間諜強尼英格力將三度出擊拯救世界！
               </p>
-              <button class='btn btn-secondary' type='button'
-                @click.prevent='moveTo(4)'>查看更多</button>
+              <button class="btn btn-secondary" type="button"
+                @click.prevent="moveTo(4)">查看更多</button>
             </div>
           </div>
         </div>
       </swiper-slide>
-      <swiper-slide class='slide-5 text-white'>
-        <div class='banner1 d-flex justify-content-start'>
-          <div class='banner-context col-12'>
-            <div class='banner-context-bg'>
-              <a href='#' class='badge badge-secondary p-2'>動作</a>
+      <swiper-slide class="slide-5 text-white">
+        <div class="banner1 d-flex justify-content-start">
+          <div class="banner-context col-12">
+            <div class="banner-context-bg">
+              <a href="#" class="badge badge-secondary p-2">動作</a>
               <h2>玩命關頭8</h2>
               <p>
                 這個高手如雲的團隊將跑遍全世界，阻止一個無政府主義者讓全世界陷入一團混亂。
               </p>
-              <button class='btn btn-secondary' type='button'
-                @click.prevent='moveTo(5)'>查看更多</button>
+              <button class="btn btn-secondary" type="button"
+                @click.prevent="moveTo(5)">查看更多</button>
             </div>
           </div>
         </div></swiper-slide>
-      <div class='swiper-button-next swiper-button-white' slot='button-next'></div>
-      <div class='swiper-button-prev swiper-button-white' slot='button-prev'></div>
+      <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
+      <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
     </swiper>
     <!-- swiper2 Thumbs -->
-    <swiper class='swiper gallery-thumbs' :options='swiperOptionThumbs' ref='swiperThumbs'>
-      <swiper-slide class='slide-1'></swiper-slide>
-      <swiper-slide class='slide-2'></swiper-slide>
-      <swiper-slide class='slide-3'></swiper-slide>
-      <swiper-slide class='slide-4'></swiper-slide>
-      <swiper-slide class='slide-5'></swiper-slide>
+    <swiper class="swiper gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
+      <swiper-slide class="slide-1"></swiper-slide>
+      <swiper-slide class="slide-2"></swiper-slide>
+      <swiper-slide class="slide-3"></swiper-slide>
+      <swiper-slide class="slide-4"></swiper-slide>
+      <swiper-slide class="slide-5"></swiper-slide>
     </swiper>
   </div>
 </template>

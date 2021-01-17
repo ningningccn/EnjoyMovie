@@ -6,21 +6,21 @@
       <div
         class="container-fluid">
         <button
-          class='navbar-toggler'
-          type='button'
-          data-toggle='collapse'
-          data-target='#navbarSupportedContent'
-          aria-controls='navbarSupportedContent'
-          aria-expanded='false'
-          aria-label='Toggle navigation'
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
           aria-haspopup="menu">
-          <span class='navbar-toggler-icon'>
+          <span class="navbar-toggler-icon">
             <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
           </span>
         </button>
         <router-link
           to="/" class="navbar-brand order-0" href="#">
-          <img src="@/assets/Image/Logo/EnjoyMovie.png" alt='Logo' width='60px'>
+          <img src="@/assets/Image/Logo/EnjoyMovie.png" alt="Logo" width="60px">
         </router-link>
         <div
           class="collapse navbar-collapse justify-content-end order-2 "
@@ -44,64 +44,64 @@
           </ul>
         </div>
         <!-- 購物車 -->
-        <div class='dropdown order-md-2'>
-          <a href='#'
-            class='btn-shop-cart navbar-text p-3 '
-            data-toggle='dropdown'
-            aria-expanded='false'
+        <div class="dropdown order-md-2">
+          <a href="#"
+            class="btn-shop-cart navbar-text p-3 "
+            data-toggle="dropdown"
+            aria-expanded="false"
             aria-haspopup="true">
-            <span><i aria-hidden='true' class='fas fa-shopping-cart'></i></span>
-            <span class='badge badge-pill badge-danger shop-cart'
-            v-if='cartProducts.carts && cartProducts.carts.length>0'>
+            <span><i aria-hidden="true" class="fas fa-shopping-cart"></i></span>
+            <span class="badge badge-pill badge-danger shop-cart"
+            v-if="cartProducts.carts && cartProducts.carts.length>0">
               {{ cartProducts.carts.length }}
             </span>
           </a>
-          <div class='dropdown-menu dropdown-menu-right blur'
-            aria-labelledby='dropdownMenuButton'>
-            <div class='cart'>
-              <table class='table'
-                v-if='cartProducts.carts && cartProducts.carts.length>0'>
+          <div class="dropdown-menu dropdown-menu-right blur"
+            aria-labelledby="dropdownMenuButton">
+            <div class="cart">
+              <table class="table"
+                v-if="cartProducts.carts && cartProducts.carts.length>0">
                 <thead>
                   <tr>
-                    <td class='text-align-center' width="100px">商品名稱</td>
+                    <td class="text-align-center" width="100px">商品名稱</td>
                     <td nowrap="nowrap" width="20%">數量</td>
                     <td width="15%">單價</td>
                     <td width="5%"></td>
                   </tr>
                 </thead>
-                <tbody v-for='item in cartProducts.carts' :key='item.id'>
+                <tbody v-for="item in cartProducts.carts" :key="item.id">
                   <tr>
-                    <td class='text-align-center ell'>
+                    <td class="text-align-center ell">
                       {{ item.product.title }}
                     </td>
                     <td>{{ item.qty }}{{ item.product.unit }}</td>
                     <td>{{ item.product.price | currency }}</td>
                     <td>
-                      <div class='cart_del_btn'
-                        @click.prevent='delCartItem(item.id)'>
-                        <i class='far fa-window-close'></i>
+                      <div class="cart_del_btn"
+                        @click.prevent="delCartItem(item.id)">
+                        <i class="far fa-window-close"></i>
                       </div>
                     </td>
                   </tr>
                 </tbody>
               </table>
-              <div class='text-center mb-5'
-                v-if='cartProducts.carts && cartProducts.carts.length === 0'>
+              <div class="text-center mb-5"
+                v-if="cartProducts.carts && cartProducts.carts.length === 0">
                   暫時沒有商品
               </div>
-              <div v-if='cartProducts.carts && cartProducts.carts.length > 0'>
-                <router-link to='/cart/checkproduct'
-                  class='btn btn-dark w-100 p-2 float-right
+              <div v-if="cartProducts.carts && cartProducts.carts.length > 0">
+                <router-link to="/cart/checkproduct"
+                  class="btn btn-dark w-100 p-2 float-right
                   btn-block router-link-exact-avtive
-                  router-link-active'>
+                  router-link-active">
                   前往結帳
                 </router-link>
               </div>
-              <div v-if='cartProducts.carts && cartProducts.carts.length === 0'>
-                <router-link to='/coustomer_Product/category'
-                  class='btn btn-dark w-100 p-2 float-right
+              <div v-if="cartProducts.carts && cartProducts.carts.length === 0">
+                <router-link to="/coustomer_Product/category"
+                  class="btn btn-dark w-100 p-2 float-right
                   btn-block router-link-exact-avtive
-                  router-link-active'>
+                  router-link-active">
                   繼續購物
                 </router-link>
               </div>

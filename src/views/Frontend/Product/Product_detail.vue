@@ -3,46 +3,46 @@
     :style="{backgroundImage:'url(' + product.imageUrl + ')',
     backgroundSize: 'cover', backgroundPosition: 'center'}">
     <Navbar/>
-    <div class='blur py-5'>
-      <div class='container py-5 text-white text-shadow'>
+    <div class="blur py-5">
+      <div class="container py-5 text-white text-shadow">
         <!-- 主要內容 -->
-        <div class='row context mt-5'>
-          <div class='context-left col-12 col-lg-6 mb-4'>
-            <img class='col-md-12' :src='product.imageUrl' alt='product-img'>
+        <div class="row context mt-5">
+          <div class="context-left col-12 col-lg-6 mb-4">
+            <img class="col-md-12" :src="product.imageUrl" alt="product-img">
           </div>
-          <div class='context-right col-10 mx-auto col-lg-6'>
+          <div class="context-right col-10 mx-auto col-lg-6">
             <h1>{{ product.title }}</h1>
-            <h6 class='text-secondary'>類別:{{ product.category }}</h6>
-            <p class='product-description text-justify'>
+            <h6 class="text-secondary">類別:{{ product.category }}</h6>
+            <p class="product-description text-justify">
               {{ product.description }}
             </p>
             <del
-              v-if='product.origin_price'>
+              v-if="product.origin_price">
               <span>原價：</span>{{ product.origin_price | currency }}
             </del>
-            <div class='product-price'
+            <div class="product-price"
             :class="{'text-white':!product.origin_price,
             'text-success':product.origin_price}">
-              <span v-if='product.origin_price'>優惠價：</span>
-              <span v-if='!product.origin_price'>售價：</span>
+              <span v-if="product.origin_price">優惠價：</span>
+              <span v-if="!product.origin_price">售價：</span>
               {{ product.price| currency }}
             </div>
-            <select name='' class='form-control mt-3' v-model='product.num'>
-              <option :value='num' v-for='num in 10' :key='num'>
+            <select name="" class="form-control mt-3" v-model="product.num">
+              <option :value="num" v-for="num in 10" :key="num">
                 選購 {{ num }} {{ product.unit }}
               </option>
             </select>
-            <button class='btn btn-secondary mt-5 w-100' type='button'
-              @click.prevent='addToCart(product.id, product.num)'>
+            <button class="btn btn-secondary mt-5 w-100" type="button"
+              @click.prevent="addToCart(product.id, product.num)">
               加入購物車
             </button>
           </div>
         </div>
         <!-- 預告片 -->
-        <div class="youtube" v-if='product.content'>
-          <iframe width='80%' height='400px' :src='product.content' frameborder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media;
-            gyroscope; picture-in-picture' allowfullscreen>
+        <div class="youtube" v-if="product.content">
+          <iframe width="80%" height="400px" :src="product.content" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+            gyroscope; picture-in-picture" allowfullscreen>
           </iframe>
         </div>
       </div>
