@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav
-      class="navbar navbar-expand-md navbar-dark fixed-top nav"
+      class="navbar navbar-expand-md navbar-dark fixed-top mobile-nav"
       :class="{'bgcY':scrollPostionY>30}">
       <div
         class="container-fluid">
@@ -71,7 +71,7 @@
                 </thead>
                 <tbody v-for='item in cartProducts.carts' :key='item.id'>
                   <tr>
-                    <td class='text-align-center ellipsis'>
+                    <td class='text-align-center ell'>
                       {{ item.product.title }}
                     </td>
                     <td>{{ item.qty }}{{ item.product.unit }}</td>

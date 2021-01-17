@@ -15,7 +15,7 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 @media(max-width: 768px) {
-  .nav {
+  .mobile-nav {
     background-color: rgba(0, 0, 0, 0.5);
   }
 }
@@ -53,12 +53,12 @@
 .table {
   font-size: 14px;
 }
-.ellipsis {
+.ell {
   max-width: 100px;
   overflow:hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  }
+}
 .cart_del_btn {
   cursor: pointer;
 }

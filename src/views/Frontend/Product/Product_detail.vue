@@ -1,25 +1,21 @@
 <template>
-  <div :style="{backgroundImage:'url(' + product.imageUrl + ')',
+  <div
+    :style="{backgroundImage:'url(' + product.imageUrl + ')',
     backgroundSize: 'cover', backgroundPosition: 'center'}">
     <Navbar/>
-    <div class='blur pb-5'>
-      <div class='container my-3 pb-5 text-white'>
-        <div v-if='product.content' class='text-center py-5'>
-          <iframe width='80%' height='400' :src='product.content' frameborder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media;
-            gyroscope; picture-in-picture' allowfullscreen>
-          </iframe>
-        </div>
-        <div class='context row mt-5'>
-          <div class='context-left col-12  col-md-6'>
+    <div class='blur py-5'>
+      <div class='container py-5 text-white text-shadow'>
+        <!-- 主要內容 -->
+        <div class='row context mt-5'>
+          <div class='context-left col-12 col-lg-6 mb-4'>
             <img class='col-md-12' :src='product.imageUrl' alt='product-img'>
           </div>
-          <div class='context-right col-10 mt-4 mx-auto col-md-6'>
+          <div class='context-right col-10 mx-auto col-lg-6'>
             <h1>{{ product.title }}</h1>
             <h6 class='text-secondary'>類別:{{ product.category }}</h6>
-            <div class='product-description'>
+            <p class='product-description text-justify'>
               {{ product.description }}
-            </div>
+            </p>
             <del
               v-if='product.origin_price'>
               <span>原價：</span>{{ product.origin_price | currency }}
@@ -42,6 +38,20 @@
             </button>
           </div>
         </div>
+        <!-- 預告片 -->
+        <div class="youtube" v-if='product.content'>
+          <iframe width='80%' height='400px' :src='product.content' frameborder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media;
+            gyroscope; picture-in-picture' allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+        <!-- 相關電影 -->
+      <div
+        class="other-Movie col-10 mx-auto text-white text-shadow"
+        v-if="otherMovie.length>0">
+        <h3 class="mb-3">相關電影</h3>
+        <Detail :product-category="otherMovie"/>
       </div>
     </div>
   </div>
@@ -49,16 +59,20 @@
 
 <script>
 import Navbar from '@/components/Navbar.vue';
+import Detail from '@/components/Frontend/Product/Detail_swiper.vue';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   data() {
     return {
       product_detailId: '',
       product: {},
+      otherMovie: [],
     };
   },
   components: {
     Navbar,
+    Detail,
   },
   methods: {
     getProduct_detail() {
@@ -70,12 +84,34 @@ export default {
           vm.product = response.data.product;
           vm.product.num = 1;
           vm.$store.dispatch('updateLoading', false);
+          this.filterCategory();
+        } else {
+          vm.$store.dispatch('updateLoading', false);
+        }
+      });
+    },
+    filterCategory() {
+      const vm = this;
+      const api = `${process.env.VUE_APP_API}/api/${process.env.VUE_APP_CUSTOMPATH}/products/all`;
+      vm.$store.dispatch('updateLoading', true);
+      vm.$http.get(api).then((response) => {
+        if (response.data.success) {
+          vm.otherMovie = response.data.products;
+          vm.otherMovie = vm.otherMovie.filter((item) => item.category
+          === vm.product.category && item.id !== vm.product.id);
+          vm.$store.dispatch('updateLoading', false);
+        } else {
+          vm.$store.dispatch('updateLoading', false);
         }
       });
     },
     addToCart(id, qty = 1) {
       this.$store.dispatch('cartModules/addToCart', { id, qty });
     },
+    ...mapActions('productModules', ['getAllProducts']),
+  },
+  computed: {
+    ...mapGetters('productModules', ['allproducts']),
   },
   created() {
     this.product_detailId = this.$route.params.productId;
