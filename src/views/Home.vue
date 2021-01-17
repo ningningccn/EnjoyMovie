@@ -22,7 +22,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import Navbar from '@/components/Navbar.vue';
 import Swiper from '@/components/Frontend/Home/Swiper.vue';
 import Recommended from '@/components/Frontend/Home/Recommended.vue';

@@ -9,7 +9,7 @@
               <a href='#' class='badge badge-secondary p-2'>動作</a>
               <h2>水行俠</h2>
               <p>
-                當年輕的亞瑟庫瑞得知他是水底王國亞特蘭提斯的王位繼承人，他必須作出決定，勇敢引領他的人民並成為這個世界的英雄。
+                亞瑟庫瑞得知他是亞特蘭提斯的王位繼承人，他必須作出決定，引領他的人民。
               </p>
               <button class='btn btn-secondary' type='button'
               @click.prevent='moveTo(1)'>查看更多</button>
@@ -24,8 +24,7 @@
               <a href='#' class='badge badge-secondary p-2'>動作</a>
               <h2>惡棍英雄：死侍</h2>
               <p>
-                韋德威爾遜由於得了不治之症而自願加入「Weapon X 計劃」，
-                受到一個不法的實驗組織進行身體實驗性手術，並讓他的身體擁有快速再生的獨特能力，並成為「死侍」。
+                這位嘴砲英雄將帶著自己新的超能力，向那些毀掉他生活的仇人展開報復。
               </p>
               <button class='btn btn-secondary' type='button' @click.prevent='moveTo(2)'>
                 查看更多
@@ -70,9 +69,9 @@
           <div class='banner-context col-12'>
             <div class='banner-context-bg'>
               <a href='#' class='badge badge-secondary p-2'>動作</a>
-              <h2>玩命關頭</h2>
+              <h2>玩命關頭8</h2>
               <p>
-                哈柏是一名美國外交安全局菁英探員，與無法無天的不法之徒戴克蕭，這一對死對頭就一直在嗆來嗆去、拳來拳往，試圖把對方打趴。
+                這個高手如雲的團隊將跑遍全世界，阻止一個無政府主義者讓全世界陷入一團混亂。
               </p>
               <button class='btn btn-secondary' type='button'
                 @click.prevent='moveTo(5)'>查看更多</button>
@@ -177,7 +176,7 @@ export default {
 }
 .banner-context-bg {
   text-shadow: 1px 1px 12px black;
-  padding:40px;
+  padding:20px 10px 20px 10px;
 }
 .thumb-example {
   height: 700px;
@@ -212,7 +211,6 @@ export default {
   &.gallery-top {
     height: 85%;
     width: 100%;
-    margin-top: -80px;
   }
   &.gallery-thumbs {
     height: 15%;

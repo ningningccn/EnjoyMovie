@@ -1,10 +1,10 @@
 <template>
   <div class="category row mx-auto">
     <a href="#"
-      class="category-btn "
+      class="category-btn"
       @click.prevent="gettempCategory('')"
-      :class="{'active': tempCategory === ''}" >
-      <div class="category-item  d-flex justify-content-center my-1 p-2 ">
+      :class="{'active': tempCategory === ''}">
+      <div class="category-item  d-flex justify-content-center my-1 p-2">
         <span class ="align-self-center"
           :class="{'text-secondary': tempCategory === ''}">
           所有電影
@@ -12,9 +12,9 @@
       </div>
     </a>
     <a href="#"
-      class="category-btn "
+      class="category-btn"
       @click.prevent="gettempCategory('動作')"
-      :class="{'active': tempCategory === '動作'}" >
+      :class="{'active': tempCategory === '動作'}">
       <div class="category-item  d-flex justify-content-center my-1 p-2">
         <span class ="align-self-center"
           :class="{'text-secondary': tempCategory === '動作'}">
@@ -23,9 +23,9 @@
       </div>
     </a>
     <a href="#"
-      class="category-btn "
+      class="category-btn"
       @click.prevent="gettempCategory('劇情')"
-      :class="{'active': tempCategory === '劇情'}" >
+      :class="{'active': tempCategory === '劇情'}">
       <div class="category-item  d-flex justify-content-center my-1 p-2">
         <span class ="align-self-center"
           :class="{'text-secondary': tempCategory === '劇情'}">
@@ -34,9 +34,9 @@
       </div>
     </a>
     <a href="#"
-      class="category-btn "
+      class="category-btn"
       @click.prevent="gettempCategory('愛情')"
-      :class="{'active': tempCategory === '愛情'}" >
+      :class="{'active': tempCategory === '愛情'}">
       <div class="category-item  d-flex justify-content-center my-1 p-2">
         <span class ="align-self-center"
           :class="{'text-secondary': tempCategory === '愛情'}">
@@ -47,7 +47,7 @@
     <a href="#"
       class="category-btn "
       @click.prevent="gettempCategory('動畫')"
-      :class="{'active': tempCategory === '動畫'}" >
+      :class="{'active': tempCategory === '動畫'}">
       <div class="category-item  d-flex justify-content-center my-1 p-2">
         <span class ="align-self-center"
           :class="{'text-secondary': tempCategory === '卡通'}">
