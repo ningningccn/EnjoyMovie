@@ -4,10 +4,8 @@
     <swiper-slide
       v-for="item in productCategory" :key="item.id"
       @click.native="moveTo(item.id)">
-      <!-- {{ item.title }} -->
       <img :src="item.imageUrl" alt="imageUrl">
     </swiper-slide>
-    <!-- <div class="swiper-pagination" slot="pagination"></div> -->
   </swiper>
   </div>
 
@@ -16,7 +14,6 @@
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 import 'swiper/swiper-bundle.css';
-// import 'swiper/css/swiper.css'
 
 export default {
   name: 'swiper-example-free-mode',
@@ -32,10 +29,6 @@ export default {
         slidesPerView: 'auto',
         spaceBetween: 20,
         freeMode: true,
-        // pagination: {
-        //   el: '.swiper-pagination',
-        //   clickable: true,
-        // },
       },
     };
   },
