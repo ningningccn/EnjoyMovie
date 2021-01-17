@@ -1,15 +1,15 @@
 <template>
-  <div class='home'>
+  <div class="home">
     <Navbar/>
-    <div class='col-12 px-0'>
+    <div class="col-12 px-0">
     <Swiper/>
     </div>
     <Recommended/>
-    <div class='background'>
-      <div class='background-img'></div>
-      <div class='container-blur'></div>
-      <div class='container py-5 px-0'>
-        <div class='new text-white h2 mt-5 pt-4 text-center'>
+    <div class="background">
+      <div class="background-img"></div>
+      <div class="container-blur"></div>
+      <div class="container py-5 px-0">
+        <div class="new text-white h2 mt-5 pt-4 text-center">
           最新上映
         </div>
         <ThreeDSwiper/>

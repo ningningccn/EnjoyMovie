@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h2 class='text-white' v-if='tempCategory === ""'>所有電影</h2>
-    <h2 class='text-white' v-if='tempCategory === "動作"'>動作類</h2>
-    <h2 class='text-white' v-if='tempCategory === "劇情"'>劇情類</h2>
-    <h2 class='text-white' v-if='tempCategory === "愛情"'>愛情類</h2>
-    <h2 class='text-white' v-if='tempCategory === "動畫"'>動畫類</h2>
+    <h2 class="text-white" v-if="tempCategory === ''">所有電影</h2>
+    <h2 class="text-white" v-if="tempCategory === '動作'">動作類</h2>
+    <h2 class="text-white" v-if="tempCategory === '劇情'">劇情類</h2>
+    <h2 class="text-white" v-if="tempCategory === '愛情'">愛情類</h2>
+    <h2 class="text-white" v-if="tempCategory === '動畫'">動畫類</h2>
     <Card/>
     <Pagination :pagination="pagination" @event="getProduct"
       v-if="tempCategory===''"></Pagination>

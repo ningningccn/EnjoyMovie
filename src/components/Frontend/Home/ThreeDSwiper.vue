@@ -1,25 +1,25 @@
 <template>
-  <div class='example-3d'>
-    <swiper class='swiper' :options='swiperOption'>
-      <swiper-slide v-for='item in products' :key='item.id'
-        @click.native='getProduct_detail(item.id)'>
-        <img :src='item.imageUrl' alt='imageUrl'>
+  <div class="example-3d">
+    <swiper class="swiper" :options="swiperOption">
+      <swiper-slide v-for="item in products" :key="item.id"
+        @click.native="getProduct_detail(item.id)">
+        <img :src="item.imageUrl" alt="imageUrl">
       </swiper-slide>
-      <div class='swiper-pagination' slot='pagination'></div>
+      <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
     <div
-      class='modal fade' id='productModal' tabindex='-1' role='dialog'
-      aria-labelledby='exampleModalLabel' aria-hidden='true'>
-      <div class='modal-dialog' role='document'>
-        <div class='modal-content'>
-          <div class='modal-body row'>
-            <img :src='product.imageUrl' class='mx-auto' alt='product.imageUrl'>
-              <div class='text-white p-3 mx-auto'>
-              <h3 class ='text-center' >電影簡介</h3>
+      class="modal fade" id="productModal" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body row">
+            <img :src="product.imageUrl" class="mx-auto" alt="product.imageUrl">
+              <div class="text-white p-3 mx-auto">
+              <h3 class ="text-center">電影簡介</h3>
               {{ product.description }}
             </div>
-            <button type='button' class='btn btn-secondary w-100'
-              @click.prevent='product_detail(product.id)'>
+            <button type="button" class="btn btn-secondary w-100"
+              @click.prevent="product_detail(product.id)">
               想了解更多
             </button>
           </div>

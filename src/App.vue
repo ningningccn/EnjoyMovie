@@ -1,10 +1,10 @@
 <template>
-  <div id='app'>
-    <loading :active.sync='isLoading'></loading>
-    <div class='wrap'>
+  <div id="app">
+    <loading :active.sync="isLoading"></loading>
+    <div class="wrap">
       <router-view/>
     </div>
-    <div class='footer'>
+    <div class="footer">
       <Footer/>
     </div>
   </div>
