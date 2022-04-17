@@ -53,6 +53,7 @@ export default {
       vm.$store.dispatch('updateLoading', true);
       vm.$http.post(api, vm.user).then((response) => {
         if (response.data.success) {
+          document.cookie = `hexToken=${response.data.token}; expires=${new Date(response.data.expired)};`;
           vm.$router.push('/admin/product');
           vm.$store.dispatch('updateLoading', false);
         } else {
